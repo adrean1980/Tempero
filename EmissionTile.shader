@@ -110,37 +110,33 @@ Shader "CustomShader/Unlit/EmissionTile"
       
       fixed4 frag (v2f i) : SV_Target
       {
-        float4 mainTex = tex2D(_MainTex, i.uv.xy);
-        float3 emissionCol = mainTex.xyz * _EmissionColor;
-        emissionCol = mainTex.www * emissionCol;
-        mainTex.xyz = (mainTex.xyz * (UNITY_LIGHTMODEL_AMBIENT.rgb * 2) * _Color) * 2;
-        emissionCol = emissionCol * _Emmission.xxx;
-        float4 finalColor = float4(emissionCol * i.uv.zzz + mainTex.xyz, 1.0);
+        fixed4 col = tex2D(_MainTex, i.uv.xy) * _Color * i.uv.z * i.uv.w;
+        col.rgb += _EmissionColor.rgb * _Emmission * _EmmissionMultiplier;
         #if _SHAPE_CIRCLE
           float2 dir = i.worldPos.xz - _WorldSpaceCameraPos.xz;
           float dist = length(dir);
           float fade = saturate(1.0 - (dist / _EmissionDistance));
-          finalColor.xyz += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
+          col.rgb += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
         #elif _SHAPE_FORWARD
           float3 viewDir = normalize(UnityWorldSpaceViewDir(i.worldPos));
           float NdotV = dot(i.worldNormal, viewDir);
           float fade = saturate(NdotV * _EmmissionRange);
-          finalColor.xyz += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
+          col.rgb += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
         #elif _SHAPE_NONE
           // No emission
         #elif _SHAPE_KEYBOARD
           float keyboardInput = 0.0;
           float fade = saturate(keyboardInput * _EmmissionRange);
-          finalColor.xyz += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
+          col.rgb += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
         #elif _SHAPE_LIGHTMAP
           float3 lightmapColor = DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.lightmapUV.xy));
           float fade = saturate(lightmapColor.r * _EmmissionRange);
-          finalColor.xyz += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
+          col.rgb += _EmissionColor.rgb * (_Emmission + _EmmissionMultiplier * fade) * fade;
         #endif
         #if _VERTEXCOLOR_ON
           if (_VertexColor)
           {
-            finalColor.xyz *= i.uv.z;
+            col.rgb *= i.uv.z;
           }
         #endif
         #if ENABLE_FRESNEL
@@ -148,14 +144,12 @@ Shader "CustomShader/Unlit/EmissionTile"
           {
             fixed fresnel = 1.0 - dot(normalize(i.viewDir), i.worldNormal);
             fresnel = pow(fresnel, _FresnelPower);
-            finalColor.xyz += fresnel * _FresnelColor * _FresnelScale;
+            col.rgb += fresnel * _FresnelColor * _FresnelScale;
           }
         #endif
         UNITY_LIGHT_ATTENUATION(atten, i, i.worldPos);
         UNITY_APPLY_FOG(i.fogCoord, col);
-        return finalColor;
-
-
+        return col
       }
       ENDCG
     }
