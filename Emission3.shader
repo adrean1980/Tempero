@@ -23,7 +23,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 
 
 			SubProgram "gles hw_tier00 " {
-					Keywords { "DIRECTIONAL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "_SHAPE_LIGHTMAP" }
 					"!!GLES
 					//ShaderGLESExporter
 					#version 100
@@ -38,50 +38,32 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform highp vec3 _V_CW_Bias;
 					uniform highp vec4 _V_CW_PivotPoint_Position;
 					uniform highp vec4 _MainTex_ST;
-					uniform highp float _EmmissionMultiplier;
-					uniform mediump float _EmmissionRange;
-					uniform mediump float _EmissionDistance;
-					uniform highp vec4 _PlayerLocation;
 					varying highp vec4 xlv_TEXCOORD0;
 					void main ()
 					{
-					  mediump float _EmmissionScale_1;
-					  mediump vec3 worldPos_2;
-					  highp vec4 tmpvar_3;
-					  highp vec4 vertex_4;
-					  highp vec2 xyOff_5;
-					  highp vec4 worldPos_6;
+					  highp vec4 tmpvar_1;
+					  highp vec2 xyOff_2;
+					  highp vec4 worldPos_3;
+					  highp vec4 tmpvar_4;
+					  tmpvar_4 = (unity_ObjectToWorld * _glesVertex);
+					  worldPos_3.w = tmpvar_4.w;
+					  worldPos_3.xyz = (tmpvar_4.xyz - _V_CW_PivotPoint_Position.xyz);
+					  highp vec2 tmpvar_5;
+					  tmpvar_5 = max (vec2(0.0, 0.0), (worldPos_3.zz - _V_CW_Bias.xy));
+					  xyOff_2 = (tmpvar_5 * tmpvar_5);
+					  highp vec4 tmpvar_6;
+					  tmpvar_6.zw = vec2(0.0, 0.0);
+					  tmpvar_6.x = (-(_V_CW_Bend.y) * xyOff_2.y);
+					  tmpvar_6.y = (_V_CW_Bend.x * xyOff_2.x);
+					  worldPos_3 = (tmpvar_6 * 0.001);
 					  highp vec4 tmpvar_7;
-					  tmpvar_7 = (unity_ObjectToWorld * _glesVertex);
-					  worldPos_6.w = tmpvar_7.w;
-					  worldPos_6.xyz = (tmpvar_7.xyz - _V_CW_PivotPoint_Position.xyz);
-					  highp vec2 tmpvar_8;
-					  tmpvar_8 = max (vec2(0.0, 0.0), (worldPos_6.zz - _V_CW_Bias.xy));
-					  xyOff_5 = (tmpvar_8 * tmpvar_8);
-					  highp vec4 tmpvar_9;
-					  tmpvar_9.zw = vec2(0.0, 0.0);
-					  tmpvar_9.x = (-(_V_CW_Bend.y) * xyOff_5.y);
-					  tmpvar_9.y = (_V_CW_Bend.x * xyOff_5.x);
-					  worldPos_6 = (tmpvar_9 * 0.001);
-					  vertex_4 = (_glesVertex + (unity_WorldToObject * worldPos_6));
-					  highp vec4 tmpvar_10;
-					  tmpvar_10.w = 1.0;
-					  tmpvar_10.xyz = vertex_4.xyz;
-					  highp vec3 tmpvar_11;
-					  tmpvar_11 = (unity_ObjectToWorld * vertex_4).xyz;
-					  worldPos_2 = tmpvar_11;
-					  tmpvar_3.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-					  highp float tmpvar_12;
-					  tmpvar_12 = (_EmmissionRange - (abs(
-					    (worldPos_2.z - (_PlayerLocation.z + _EmissionDistance))
-					  ) * 2.0));
-					  _EmmissionScale_1 = tmpvar_12;
-					  mediump float tmpvar_13;
-					  tmpvar_13 = max (0.2, _EmmissionScale_1);
-					  tmpvar_3.z = tmpvar_13;
-					  tmpvar_3.w = max (0.0, sign(_EmmissionMultiplier));
-					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_10));
-					  xlv_TEXCOORD0 = tmpvar_3;
+					  tmpvar_7.w = 1.0;
+					  tmpvar_7.xyz = (_glesVertex + (unity_WorldToObject * worldPos_3)).xyz;
+					  tmpvar_1.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+					  tmpvar_1.z = 1.0;
+					  tmpvar_1.w = 1.0;
+					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_7));
+					  xlv_TEXCOORD0 = tmpvar_1;
 					}
 					
 					
@@ -114,7 +96,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles hw_tier01 " {
-					Keywords { "DIRECTIONAL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "_SHAPE_LIGHTMAP" }
 					"!!GLES
 					//ShaderGLESExporter
 					#version 100
@@ -129,50 +111,32 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform highp vec3 _V_CW_Bias;
 					uniform highp vec4 _V_CW_PivotPoint_Position;
 					uniform highp vec4 _MainTex_ST;
-					uniform highp float _EmmissionMultiplier;
-					uniform mediump float _EmmissionRange;
-					uniform mediump float _EmissionDistance;
-					uniform highp vec4 _PlayerLocation;
 					varying highp vec4 xlv_TEXCOORD0;
 					void main ()
 					{
-					  mediump float _EmmissionScale_1;
-					  mediump vec3 worldPos_2;
-					  highp vec4 tmpvar_3;
-					  highp vec4 vertex_4;
-					  highp vec2 xyOff_5;
-					  highp vec4 worldPos_6;
+					  highp vec4 tmpvar_1;
+					  highp vec2 xyOff_2;
+					  highp vec4 worldPos_3;
+					  highp vec4 tmpvar_4;
+					  tmpvar_4 = (unity_ObjectToWorld * _glesVertex);
+					  worldPos_3.w = tmpvar_4.w;
+					  worldPos_3.xyz = (tmpvar_4.xyz - _V_CW_PivotPoint_Position.xyz);
+					  highp vec2 tmpvar_5;
+					  tmpvar_5 = max (vec2(0.0, 0.0), (worldPos_3.zz - _V_CW_Bias.xy));
+					  xyOff_2 = (tmpvar_5 * tmpvar_5);
+					  highp vec4 tmpvar_6;
+					  tmpvar_6.zw = vec2(0.0, 0.0);
+					  tmpvar_6.x = (-(_V_CW_Bend.y) * xyOff_2.y);
+					  tmpvar_6.y = (_V_CW_Bend.x * xyOff_2.x);
+					  worldPos_3 = (tmpvar_6 * 0.001);
 					  highp vec4 tmpvar_7;
-					  tmpvar_7 = (unity_ObjectToWorld * _glesVertex);
-					  worldPos_6.w = tmpvar_7.w;
-					  worldPos_6.xyz = (tmpvar_7.xyz - _V_CW_PivotPoint_Position.xyz);
-					  highp vec2 tmpvar_8;
-					  tmpvar_8 = max (vec2(0.0, 0.0), (worldPos_6.zz - _V_CW_Bias.xy));
-					  xyOff_5 = (tmpvar_8 * tmpvar_8);
-					  highp vec4 tmpvar_9;
-					  tmpvar_9.zw = vec2(0.0, 0.0);
-					  tmpvar_9.x = (-(_V_CW_Bend.y) * xyOff_5.y);
-					  tmpvar_9.y = (_V_CW_Bend.x * xyOff_5.x);
-					  worldPos_6 = (tmpvar_9 * 0.001);
-					  vertex_4 = (_glesVertex + (unity_WorldToObject * worldPos_6));
-					  highp vec4 tmpvar_10;
-					  tmpvar_10.w = 1.0;
-					  tmpvar_10.xyz = vertex_4.xyz;
-					  highp vec3 tmpvar_11;
-					  tmpvar_11 = (unity_ObjectToWorld * vertex_4).xyz;
-					  worldPos_2 = tmpvar_11;
-					  tmpvar_3.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-					  highp float tmpvar_12;
-					  tmpvar_12 = (_EmmissionRange - (abs(
-					    (worldPos_2.z - (_PlayerLocation.z + _EmissionDistance))
-					  ) * 2.0));
-					  _EmmissionScale_1 = tmpvar_12;
-					  mediump float tmpvar_13;
-					  tmpvar_13 = max (0.2, _EmmissionScale_1);
-					  tmpvar_3.z = tmpvar_13;
-					  tmpvar_3.w = max (0.0, sign(_EmmissionMultiplier));
-					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_10));
-					  xlv_TEXCOORD0 = tmpvar_3;
+					  tmpvar_7.w = 1.0;
+					  tmpvar_7.xyz = (_glesVertex + (unity_WorldToObject * worldPos_3)).xyz;
+					  tmpvar_1.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+					  tmpvar_1.z = 1.0;
+					  tmpvar_1.w = 1.0;
+					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_7));
+					  xlv_TEXCOORD0 = tmpvar_1;
 					}
 					
 					
@@ -205,7 +169,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles hw_tier02 " {
-					Keywords { "DIRECTIONAL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "_SHAPE_LIGHTMAP" }
 					"!!GLES
 					//ShaderGLESExporter
 					#version 100
@@ -220,50 +184,32 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform highp vec3 _V_CW_Bias;
 					uniform highp vec4 _V_CW_PivotPoint_Position;
 					uniform highp vec4 _MainTex_ST;
-					uniform highp float _EmmissionMultiplier;
-					uniform mediump float _EmmissionRange;
-					uniform mediump float _EmissionDistance;
-					uniform highp vec4 _PlayerLocation;
 					varying highp vec4 xlv_TEXCOORD0;
 					void main ()
 					{
-					  mediump float _EmmissionScale_1;
-					  mediump vec3 worldPos_2;
-					  highp vec4 tmpvar_3;
-					  highp vec4 vertex_4;
-					  highp vec2 xyOff_5;
-					  highp vec4 worldPos_6;
+					  highp vec4 tmpvar_1;
+					  highp vec2 xyOff_2;
+					  highp vec4 worldPos_3;
+					  highp vec4 tmpvar_4;
+					  tmpvar_4 = (unity_ObjectToWorld * _glesVertex);
+					  worldPos_3.w = tmpvar_4.w;
+					  worldPos_3.xyz = (tmpvar_4.xyz - _V_CW_PivotPoint_Position.xyz);
+					  highp vec2 tmpvar_5;
+					  tmpvar_5 = max (vec2(0.0, 0.0), (worldPos_3.zz - _V_CW_Bias.xy));
+					  xyOff_2 = (tmpvar_5 * tmpvar_5);
+					  highp vec4 tmpvar_6;
+					  tmpvar_6.zw = vec2(0.0, 0.0);
+					  tmpvar_6.x = (-(_V_CW_Bend.y) * xyOff_2.y);
+					  tmpvar_6.y = (_V_CW_Bend.x * xyOff_2.x);
+					  worldPos_3 = (tmpvar_6 * 0.001);
 					  highp vec4 tmpvar_7;
-					  tmpvar_7 = (unity_ObjectToWorld * _glesVertex);
-					  worldPos_6.w = tmpvar_7.w;
-					  worldPos_6.xyz = (tmpvar_7.xyz - _V_CW_PivotPoint_Position.xyz);
-					  highp vec2 tmpvar_8;
-					  tmpvar_8 = max (vec2(0.0, 0.0), (worldPos_6.zz - _V_CW_Bias.xy));
-					  xyOff_5 = (tmpvar_8 * tmpvar_8);
-					  highp vec4 tmpvar_9;
-					  tmpvar_9.zw = vec2(0.0, 0.0);
-					  tmpvar_9.x = (-(_V_CW_Bend.y) * xyOff_5.y);
-					  tmpvar_9.y = (_V_CW_Bend.x * xyOff_5.x);
-					  worldPos_6 = (tmpvar_9 * 0.001);
-					  vertex_4 = (_glesVertex + (unity_WorldToObject * worldPos_6));
-					  highp vec4 tmpvar_10;
-					  tmpvar_10.w = 1.0;
-					  tmpvar_10.xyz = vertex_4.xyz;
-					  highp vec3 tmpvar_11;
-					  tmpvar_11 = (unity_ObjectToWorld * vertex_4).xyz;
-					  worldPos_2 = tmpvar_11;
-					  tmpvar_3.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-					  highp float tmpvar_12;
-					  tmpvar_12 = (_EmmissionRange - (abs(
-					    (worldPos_2.z - (_PlayerLocation.z + _EmissionDistance))
-					  ) * 2.0));
-					  _EmmissionScale_1 = tmpvar_12;
-					  mediump float tmpvar_13;
-					  tmpvar_13 = max (0.2, _EmmissionScale_1);
-					  tmpvar_3.z = tmpvar_13;
-					  tmpvar_3.w = max (0.0, sign(_EmmissionMultiplier));
-					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_10));
-					  xlv_TEXCOORD0 = tmpvar_3;
+					  tmpvar_7.w = 1.0;
+					  tmpvar_7.xyz = (_glesVertex + (unity_WorldToObject * worldPos_3)).xyz;
+					  tmpvar_1.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+					  tmpvar_1.z = 1.0;
+					  tmpvar_1.w = 1.0;
+					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_7));
+					  xlv_TEXCOORD0 = tmpvar_1;
 					}
 					
 					
@@ -296,7 +242,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles3 hw_tier00 " {
-					Keywords { "DIRECTIONAL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "_SHAPE_LIGHTMAP" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -310,20 +256,12 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform 	vec4 _V_CW_PivotPoint_Position;
 					uniform 	vec2 _zero2;
 					uniform 	vec4 _MainTex_ST;
-					uniform 	float _EmmissionMultiplier;
-					uniform 	mediump float _EmmissionRange;
-					uniform 	mediump float _EmissionDistance;
-					uniform 	vec4 _PlayerLocation;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
 					out highp vec4 vs_TEXCOORD0;
 					vec4 u_xlat0;
-					int u_xlati0;
 					vec4 u_xlat1;
-					vec4 u_xlat2;
-					mediump float u_xlat16_3;
-					float u_xlat4;
-					int u_xlati4;
+					vec3 u_xlat2;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -337,37 +275,19 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					    u_xlat1.x = u_xlat0.y * (-_V_CW_Bend.y);
 					    u_xlat1.y = u_xlat0.x * _V_CW_Bend.x;
 					    u_xlat0.xy = u_xlat1.xy * vec2(0.00100000005, 0.00100000005);
-					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_WorldToObject[1];
-					    u_xlat0 = hlslcc_mtx4x4unity_WorldToObject[0] * u_xlat0.xxxx + u_xlat1;
-					    u_xlat0 = u_xlat0 + in_POSITION0;
+					    u_xlat2.xyz = u_xlat0.yyy * hlslcc_mtx4x4unity_WorldToObject[1].xyz;
+					    u_xlat0.xyz = hlslcc_mtx4x4unity_WorldToObject[0].xyz * u_xlat0.xxx + u_xlat2.xyz;
+					    u_xlat0.xyz = u_xlat0.xyz + in_POSITION0.xyz;
 					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[0] * u_xlat0.xxxx + u_xlat1;
-					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
-					    u_xlat0.x = hlslcc_mtx4x4unity_ObjectToWorld[3].z * u_xlat0.w + u_xlat1.z;
-					    u_xlat1 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
-					    u_xlat2 = u_xlat1.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat1.xxxx + u_xlat2;
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat1.zzzz + u_xlat2;
-					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat1.wwww + u_xlat2;
-					    u_xlat4 = _EmissionDistance + _PlayerLocation.z;
-					    u_xlat0.x = (-u_xlat4) + u_xlat0.x;
-					    u_xlat0.x = -abs(u_xlat0.x) * 2.0 + _EmmissionRange;
-					    u_xlat16_3 = max(u_xlat0.x, 0.200000003);
-					    vs_TEXCOORD0.z = u_xlat16_3;
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = 0.0<_EmmissionMultiplier; u_xlati0 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati0 = int((0.0<_EmmissionMultiplier) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = _EmmissionMultiplier<0.0; u_xlati4 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati4 = int((_EmmissionMultiplier<0.0) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					    u_xlati0 = (-u_xlati0) + u_xlati4;
-					    u_xlati0 = max(u_xlati0, 0);
-					    vs_TEXCOORD0.w = float(u_xlati0);
+					    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
+					    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_TEXCOORD0.zw = vec2(1.0, 1.0);
 					    return;
 					}
 					
@@ -405,7 +325,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles3 hw_tier01 " {
-					Keywords { "DIRECTIONAL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "_SHAPE_LIGHTMAP" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -419,20 +339,12 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform 	vec4 _V_CW_PivotPoint_Position;
 					uniform 	vec2 _zero2;
 					uniform 	vec4 _MainTex_ST;
-					uniform 	float _EmmissionMultiplier;
-					uniform 	mediump float _EmmissionRange;
-					uniform 	mediump float _EmissionDistance;
-					uniform 	vec4 _PlayerLocation;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
 					out highp vec4 vs_TEXCOORD0;
 					vec4 u_xlat0;
-					int u_xlati0;
 					vec4 u_xlat1;
-					vec4 u_xlat2;
-					mediump float u_xlat16_3;
-					float u_xlat4;
-					int u_xlati4;
+					vec3 u_xlat2;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -446,37 +358,19 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					    u_xlat1.x = u_xlat0.y * (-_V_CW_Bend.y);
 					    u_xlat1.y = u_xlat0.x * _V_CW_Bend.x;
 					    u_xlat0.xy = u_xlat1.xy * vec2(0.00100000005, 0.00100000005);
-					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_WorldToObject[1];
-					    u_xlat0 = hlslcc_mtx4x4unity_WorldToObject[0] * u_xlat0.xxxx + u_xlat1;
-					    u_xlat0 = u_xlat0 + in_POSITION0;
+					    u_xlat2.xyz = u_xlat0.yyy * hlslcc_mtx4x4unity_WorldToObject[1].xyz;
+					    u_xlat0.xyz = hlslcc_mtx4x4unity_WorldToObject[0].xyz * u_xlat0.xxx + u_xlat2.xyz;
+					    u_xlat0.xyz = u_xlat0.xyz + in_POSITION0.xyz;
 					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[0] * u_xlat0.xxxx + u_xlat1;
-					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
-					    u_xlat0.x = hlslcc_mtx4x4unity_ObjectToWorld[3].z * u_xlat0.w + u_xlat1.z;
-					    u_xlat1 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
-					    u_xlat2 = u_xlat1.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat1.xxxx + u_xlat2;
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat1.zzzz + u_xlat2;
-					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat1.wwww + u_xlat2;
-					    u_xlat4 = _EmissionDistance + _PlayerLocation.z;
-					    u_xlat0.x = (-u_xlat4) + u_xlat0.x;
-					    u_xlat0.x = -abs(u_xlat0.x) * 2.0 + _EmmissionRange;
-					    u_xlat16_3 = max(u_xlat0.x, 0.200000003);
-					    vs_TEXCOORD0.z = u_xlat16_3;
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = 0.0<_EmmissionMultiplier; u_xlati0 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati0 = int((0.0<_EmmissionMultiplier) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = _EmmissionMultiplier<0.0; u_xlati4 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati4 = int((_EmmissionMultiplier<0.0) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					    u_xlati0 = (-u_xlati0) + u_xlati4;
-					    u_xlati0 = max(u_xlati0, 0);
-					    vs_TEXCOORD0.w = float(u_xlati0);
+					    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
+					    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_TEXCOORD0.zw = vec2(1.0, 1.0);
 					    return;
 					}
 					
@@ -514,7 +408,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles3 hw_tier02 " {
-					Keywords { "DIRECTIONAL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "_SHAPE_LIGHTMAP" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -528,20 +422,12 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform 	vec4 _V_CW_PivotPoint_Position;
 					uniform 	vec2 _zero2;
 					uniform 	vec4 _MainTex_ST;
-					uniform 	float _EmmissionMultiplier;
-					uniform 	mediump float _EmmissionRange;
-					uniform 	mediump float _EmissionDistance;
-					uniform 	vec4 _PlayerLocation;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
 					out highp vec4 vs_TEXCOORD0;
 					vec4 u_xlat0;
-					int u_xlati0;
 					vec4 u_xlat1;
-					vec4 u_xlat2;
-					mediump float u_xlat16_3;
-					float u_xlat4;
-					int u_xlati4;
+					vec3 u_xlat2;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -555,37 +441,19 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					    u_xlat1.x = u_xlat0.y * (-_V_CW_Bend.y);
 					    u_xlat1.y = u_xlat0.x * _V_CW_Bend.x;
 					    u_xlat0.xy = u_xlat1.xy * vec2(0.00100000005, 0.00100000005);
-					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_WorldToObject[1];
-					    u_xlat0 = hlslcc_mtx4x4unity_WorldToObject[0] * u_xlat0.xxxx + u_xlat1;
-					    u_xlat0 = u_xlat0 + in_POSITION0;
+					    u_xlat2.xyz = u_xlat0.yyy * hlslcc_mtx4x4unity_WorldToObject[1].xyz;
+					    u_xlat0.xyz = hlslcc_mtx4x4unity_WorldToObject[0].xyz * u_xlat0.xxx + u_xlat2.xyz;
+					    u_xlat0.xyz = u_xlat0.xyz + in_POSITION0.xyz;
 					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[0] * u_xlat0.xxxx + u_xlat1;
-					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
-					    u_xlat0.x = hlslcc_mtx4x4unity_ObjectToWorld[3].z * u_xlat0.w + u_xlat1.z;
-					    u_xlat1 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
-					    u_xlat2 = u_xlat1.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat1.xxxx + u_xlat2;
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat1.zzzz + u_xlat2;
-					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat1.wwww + u_xlat2;
-					    u_xlat4 = _EmissionDistance + _PlayerLocation.z;
-					    u_xlat0.x = (-u_xlat4) + u_xlat0.x;
-					    u_xlat0.x = -abs(u_xlat0.x) * 2.0 + _EmmissionRange;
-					    u_xlat16_3 = max(u_xlat0.x, 0.200000003);
-					    vs_TEXCOORD0.z = u_xlat16_3;
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = 0.0<_EmmissionMultiplier; u_xlati0 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati0 = int((0.0<_EmmissionMultiplier) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = _EmmissionMultiplier<0.0; u_xlati4 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati4 = int((_EmmissionMultiplier<0.0) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					    u_xlati0 = (-u_xlati0) + u_xlati4;
-					    u_xlati0 = max(u_xlati0, 0);
-					    vs_TEXCOORD0.w = float(u_xlati0);
+					    u_xlat0 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
+					    u_xlat0 = u_xlat0 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_TEXCOORD0.zw = vec2(1.0, 1.0);
 					    return;
 					}
 					
@@ -623,7 +491,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles hw_tier00 " {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_LIGHTMAP" }
 					"!!GLES
 					//ShaderGLESExporter
 					#version 100
@@ -639,60 +507,48 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform highp vec3 _V_CW_Bias;
 					uniform highp vec4 _V_CW_PivotPoint_Position;
 					uniform highp vec4 _MainTex_ST;
-					uniform highp float _EmmissionMultiplier;
-					uniform mediump float _EmmissionRange;
-					uniform mediump float _EmissionDistance;
-					uniform highp vec4 _PlayerLocation;
 					varying highp vec4 xlv_TEXCOORD0;
 					varying highp vec3 xlv_TEXCOORD3;
 					varying highp vec3 xlv_TEXCOORD4;
 					void main ()
 					{
-					  mediump float _EmmissionScale_1;
-					  mediump vec3 worldPos_2;
-					  highp vec4 tmpvar_3;
-					  highp vec3 tmpvar_4;
-					  highp vec4 vertex_5;
-					  highp vec2 xyOff_6;
-					  highp vec4 worldPos_7;
-					  highp vec4 tmpvar_8;
-					  tmpvar_8 = (unity_ObjectToWorld * _glesVertex);
-					  worldPos_7.w = tmpvar_8.w;
-					  worldPos_7.xyz = (tmpvar_8.xyz - _V_CW_PivotPoint_Position.xyz);
-					  highp vec2 tmpvar_9;
-					  tmpvar_9 = max (vec2(0.0, 0.0), (worldPos_7.zz - _V_CW_Bias.xy));
-					  xyOff_6 = (tmpvar_9 * tmpvar_9);
+					  mediump vec3 worldPos_1;
+					  highp vec4 tmpvar_2;
+					  highp vec3 tmpvar_3;
+					  highp vec4 vertex_4;
+					  highp vec2 xyOff_5;
+					  highp vec4 worldPos_6;
+					  highp vec4 tmpvar_7;
+					  tmpvar_7 = (unity_ObjectToWorld * _glesVertex);
+					  worldPos_6.w = tmpvar_7.w;
+					  worldPos_6.xyz = (tmpvar_7.xyz - _V_CW_PivotPoint_Position.xyz);
+					  highp vec2 tmpvar_8;
+					  tmpvar_8 = max (vec2(0.0, 0.0), (worldPos_6.zz - _V_CW_Bias.xy));
+					  xyOff_5 = (tmpvar_8 * tmpvar_8);
+					  highp vec4 tmpvar_9;
+					  tmpvar_9.zw = vec2(0.0, 0.0);
+					  tmpvar_9.x = (-(_V_CW_Bend.y) * xyOff_5.y);
+					  tmpvar_9.y = (_V_CW_Bend.x * xyOff_5.x);
+					  worldPos_6 = (tmpvar_9 * 0.001);
+					  vertex_4 = (_glesVertex + (unity_WorldToObject * worldPos_6));
 					  highp vec4 tmpvar_10;
-					  tmpvar_10.zw = vec2(0.0, 0.0);
-					  tmpvar_10.x = (-(_V_CW_Bend.y) * xyOff_6.y);
-					  tmpvar_10.y = (_V_CW_Bend.x * xyOff_6.x);
-					  worldPos_7 = (tmpvar_10 * 0.001);
-					  vertex_5 = (_glesVertex + (unity_WorldToObject * worldPos_7));
-					  highp vec4 tmpvar_11;
-					  tmpvar_11.w = 1.0;
-					  tmpvar_11.xyz = vertex_5.xyz;
-					  highp vec3 tmpvar_12;
-					  tmpvar_12 = (unity_ObjectToWorld * vertex_5).xyz;
-					  worldPos_2 = tmpvar_12;
-					  tmpvar_3.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-					  tmpvar_4 = worldPos_2;
-					  highp mat3 tmpvar_13;
-					  tmpvar_13[0] = unity_WorldToObject[0].xyz;
-					  tmpvar_13[1] = unity_WorldToObject[1].xyz;
-					  tmpvar_13[2] = unity_WorldToObject[2].xyz;
-					  highp float tmpvar_14;
-					  tmpvar_14 = (_EmmissionRange - (abs(
-					    (worldPos_2.z - (_PlayerLocation.z + _EmissionDistance))
-					  ) * 2.0));
-					  _EmmissionScale_1 = tmpvar_14;
-					  mediump float tmpvar_15;
-					  tmpvar_15 = max (0.2, _EmmissionScale_1);
-					  tmpvar_3.z = tmpvar_15;
-					  tmpvar_3.w = max (0.0, sign(_EmmissionMultiplier));
-					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_11));
-					  xlv_TEXCOORD0 = tmpvar_3;
-					  xlv_TEXCOORD3 = normalize((_glesNormal * tmpvar_13));
-					  xlv_TEXCOORD4 = tmpvar_4;
+					  tmpvar_10.w = 1.0;
+					  tmpvar_10.xyz = vertex_4.xyz;
+					  highp vec3 tmpvar_11;
+					  tmpvar_11 = (unity_ObjectToWorld * vertex_4).xyz;
+					  worldPos_1 = tmpvar_11;
+					  tmpvar_2.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+					  tmpvar_3 = worldPos_1;
+					  highp mat3 tmpvar_12;
+					  tmpvar_12[0] = unity_WorldToObject[0].xyz;
+					  tmpvar_12[1] = unity_WorldToObject[1].xyz;
+					  tmpvar_12[2] = unity_WorldToObject[2].xyz;
+					  tmpvar_2.z = 1.0;
+					  tmpvar_2.w = 1.0;
+					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_10));
+					  xlv_TEXCOORD0 = tmpvar_2;
+					  xlv_TEXCOORD3 = normalize((_glesNormal * tmpvar_12));
+					  xlv_TEXCOORD4 = tmpvar_3;
 					}
 					
 					
@@ -744,7 +600,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles hw_tier01 " {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_LIGHTMAP" }
 					"!!GLES
 					//ShaderGLESExporter
 					#version 100
@@ -760,60 +616,48 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform highp vec3 _V_CW_Bias;
 					uniform highp vec4 _V_CW_PivotPoint_Position;
 					uniform highp vec4 _MainTex_ST;
-					uniform highp float _EmmissionMultiplier;
-					uniform mediump float _EmmissionRange;
-					uniform mediump float _EmissionDistance;
-					uniform highp vec4 _PlayerLocation;
 					varying highp vec4 xlv_TEXCOORD0;
 					varying highp vec3 xlv_TEXCOORD3;
 					varying highp vec3 xlv_TEXCOORD4;
 					void main ()
 					{
-					  mediump float _EmmissionScale_1;
-					  mediump vec3 worldPos_2;
-					  highp vec4 tmpvar_3;
-					  highp vec3 tmpvar_4;
-					  highp vec4 vertex_5;
-					  highp vec2 xyOff_6;
-					  highp vec4 worldPos_7;
-					  highp vec4 tmpvar_8;
-					  tmpvar_8 = (unity_ObjectToWorld * _glesVertex);
-					  worldPos_7.w = tmpvar_8.w;
-					  worldPos_7.xyz = (tmpvar_8.xyz - _V_CW_PivotPoint_Position.xyz);
-					  highp vec2 tmpvar_9;
-					  tmpvar_9 = max (vec2(0.0, 0.0), (worldPos_7.zz - _V_CW_Bias.xy));
-					  xyOff_6 = (tmpvar_9 * tmpvar_9);
+					  mediump vec3 worldPos_1;
+					  highp vec4 tmpvar_2;
+					  highp vec3 tmpvar_3;
+					  highp vec4 vertex_4;
+					  highp vec2 xyOff_5;
+					  highp vec4 worldPos_6;
+					  highp vec4 tmpvar_7;
+					  tmpvar_7 = (unity_ObjectToWorld * _glesVertex);
+					  worldPos_6.w = tmpvar_7.w;
+					  worldPos_6.xyz = (tmpvar_7.xyz - _V_CW_PivotPoint_Position.xyz);
+					  highp vec2 tmpvar_8;
+					  tmpvar_8 = max (vec2(0.0, 0.0), (worldPos_6.zz - _V_CW_Bias.xy));
+					  xyOff_5 = (tmpvar_8 * tmpvar_8);
+					  highp vec4 tmpvar_9;
+					  tmpvar_9.zw = vec2(0.0, 0.0);
+					  tmpvar_9.x = (-(_V_CW_Bend.y) * xyOff_5.y);
+					  tmpvar_9.y = (_V_CW_Bend.x * xyOff_5.x);
+					  worldPos_6 = (tmpvar_9 * 0.001);
+					  vertex_4 = (_glesVertex + (unity_WorldToObject * worldPos_6));
 					  highp vec4 tmpvar_10;
-					  tmpvar_10.zw = vec2(0.0, 0.0);
-					  tmpvar_10.x = (-(_V_CW_Bend.y) * xyOff_6.y);
-					  tmpvar_10.y = (_V_CW_Bend.x * xyOff_6.x);
-					  worldPos_7 = (tmpvar_10 * 0.001);
-					  vertex_5 = (_glesVertex + (unity_WorldToObject * worldPos_7));
-					  highp vec4 tmpvar_11;
-					  tmpvar_11.w = 1.0;
-					  tmpvar_11.xyz = vertex_5.xyz;
-					  highp vec3 tmpvar_12;
-					  tmpvar_12 = (unity_ObjectToWorld * vertex_5).xyz;
-					  worldPos_2 = tmpvar_12;
-					  tmpvar_3.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-					  tmpvar_4 = worldPos_2;
-					  highp mat3 tmpvar_13;
-					  tmpvar_13[0] = unity_WorldToObject[0].xyz;
-					  tmpvar_13[1] = unity_WorldToObject[1].xyz;
-					  tmpvar_13[2] = unity_WorldToObject[2].xyz;
-					  highp float tmpvar_14;
-					  tmpvar_14 = (_EmmissionRange - (abs(
-					    (worldPos_2.z - (_PlayerLocation.z + _EmissionDistance))
-					  ) * 2.0));
-					  _EmmissionScale_1 = tmpvar_14;
-					  mediump float tmpvar_15;
-					  tmpvar_15 = max (0.2, _EmmissionScale_1);
-					  tmpvar_3.z = tmpvar_15;
-					  tmpvar_3.w = max (0.0, sign(_EmmissionMultiplier));
-					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_11));
-					  xlv_TEXCOORD0 = tmpvar_3;
-					  xlv_TEXCOORD3 = normalize((_glesNormal * tmpvar_13));
-					  xlv_TEXCOORD4 = tmpvar_4;
+					  tmpvar_10.w = 1.0;
+					  tmpvar_10.xyz = vertex_4.xyz;
+					  highp vec3 tmpvar_11;
+					  tmpvar_11 = (unity_ObjectToWorld * vertex_4).xyz;
+					  worldPos_1 = tmpvar_11;
+					  tmpvar_2.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+					  tmpvar_3 = worldPos_1;
+					  highp mat3 tmpvar_12;
+					  tmpvar_12[0] = unity_WorldToObject[0].xyz;
+					  tmpvar_12[1] = unity_WorldToObject[1].xyz;
+					  tmpvar_12[2] = unity_WorldToObject[2].xyz;
+					  tmpvar_2.z = 1.0;
+					  tmpvar_2.w = 1.0;
+					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_10));
+					  xlv_TEXCOORD0 = tmpvar_2;
+					  xlv_TEXCOORD3 = normalize((_glesNormal * tmpvar_12));
+					  xlv_TEXCOORD4 = tmpvar_3;
 					}
 					
 					
@@ -865,7 +709,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles hw_tier02 " {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_LIGHTMAP" }
 					"!!GLES
 					//ShaderGLESExporter
 					#version 100
@@ -881,60 +725,48 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform highp vec3 _V_CW_Bias;
 					uniform highp vec4 _V_CW_PivotPoint_Position;
 					uniform highp vec4 _MainTex_ST;
-					uniform highp float _EmmissionMultiplier;
-					uniform mediump float _EmmissionRange;
-					uniform mediump float _EmissionDistance;
-					uniform highp vec4 _PlayerLocation;
 					varying highp vec4 xlv_TEXCOORD0;
 					varying highp vec3 xlv_TEXCOORD3;
 					varying highp vec3 xlv_TEXCOORD4;
 					void main ()
 					{
-					  mediump float _EmmissionScale_1;
-					  mediump vec3 worldPos_2;
-					  highp vec4 tmpvar_3;
-					  highp vec3 tmpvar_4;
-					  highp vec4 vertex_5;
-					  highp vec2 xyOff_6;
-					  highp vec4 worldPos_7;
-					  highp vec4 tmpvar_8;
-					  tmpvar_8 = (unity_ObjectToWorld * _glesVertex);
-					  worldPos_7.w = tmpvar_8.w;
-					  worldPos_7.xyz = (tmpvar_8.xyz - _V_CW_PivotPoint_Position.xyz);
-					  highp vec2 tmpvar_9;
-					  tmpvar_9 = max (vec2(0.0, 0.0), (worldPos_7.zz - _V_CW_Bias.xy));
-					  xyOff_6 = (tmpvar_9 * tmpvar_9);
+					  mediump vec3 worldPos_1;
+					  highp vec4 tmpvar_2;
+					  highp vec3 tmpvar_3;
+					  highp vec4 vertex_4;
+					  highp vec2 xyOff_5;
+					  highp vec4 worldPos_6;
+					  highp vec4 tmpvar_7;
+					  tmpvar_7 = (unity_ObjectToWorld * _glesVertex);
+					  worldPos_6.w = tmpvar_7.w;
+					  worldPos_6.xyz = (tmpvar_7.xyz - _V_CW_PivotPoint_Position.xyz);
+					  highp vec2 tmpvar_8;
+					  tmpvar_8 = max (vec2(0.0, 0.0), (worldPos_6.zz - _V_CW_Bias.xy));
+					  xyOff_5 = (tmpvar_8 * tmpvar_8);
+					  highp vec4 tmpvar_9;
+					  tmpvar_9.zw = vec2(0.0, 0.0);
+					  tmpvar_9.x = (-(_V_CW_Bend.y) * xyOff_5.y);
+					  tmpvar_9.y = (_V_CW_Bend.x * xyOff_5.x);
+					  worldPos_6 = (tmpvar_9 * 0.001);
+					  vertex_4 = (_glesVertex + (unity_WorldToObject * worldPos_6));
 					  highp vec4 tmpvar_10;
-					  tmpvar_10.zw = vec2(0.0, 0.0);
-					  tmpvar_10.x = (-(_V_CW_Bend.y) * xyOff_6.y);
-					  tmpvar_10.y = (_V_CW_Bend.x * xyOff_6.x);
-					  worldPos_7 = (tmpvar_10 * 0.001);
-					  vertex_5 = (_glesVertex + (unity_WorldToObject * worldPos_7));
-					  highp vec4 tmpvar_11;
-					  tmpvar_11.w = 1.0;
-					  tmpvar_11.xyz = vertex_5.xyz;
-					  highp vec3 tmpvar_12;
-					  tmpvar_12 = (unity_ObjectToWorld * vertex_5).xyz;
-					  worldPos_2 = tmpvar_12;
-					  tmpvar_3.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
-					  tmpvar_4 = worldPos_2;
-					  highp mat3 tmpvar_13;
-					  tmpvar_13[0] = unity_WorldToObject[0].xyz;
-					  tmpvar_13[1] = unity_WorldToObject[1].xyz;
-					  tmpvar_13[2] = unity_WorldToObject[2].xyz;
-					  highp float tmpvar_14;
-					  tmpvar_14 = (_EmmissionRange - (abs(
-					    (worldPos_2.z - (_PlayerLocation.z + _EmissionDistance))
-					  ) * 2.0));
-					  _EmmissionScale_1 = tmpvar_14;
-					  mediump float tmpvar_15;
-					  tmpvar_15 = max (0.2, _EmmissionScale_1);
-					  tmpvar_3.z = tmpvar_15;
-					  tmpvar_3.w = max (0.0, sign(_EmmissionMultiplier));
-					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_11));
-					  xlv_TEXCOORD0 = tmpvar_3;
-					  xlv_TEXCOORD3 = normalize((_glesNormal * tmpvar_13));
-					  xlv_TEXCOORD4 = tmpvar_4;
+					  tmpvar_10.w = 1.0;
+					  tmpvar_10.xyz = vertex_4.xyz;
+					  highp vec3 tmpvar_11;
+					  tmpvar_11 = (unity_ObjectToWorld * vertex_4).xyz;
+					  worldPos_1 = tmpvar_11;
+					  tmpvar_2.xy = ((_glesMultiTexCoord0.xy * _MainTex_ST.xy) + _MainTex_ST.zw);
+					  tmpvar_3 = worldPos_1;
+					  highp mat3 tmpvar_12;
+					  tmpvar_12[0] = unity_WorldToObject[0].xyz;
+					  tmpvar_12[1] = unity_WorldToObject[1].xyz;
+					  tmpvar_12[2] = unity_WorldToObject[2].xyz;
+					  tmpvar_2.z = 1.0;
+					  tmpvar_2.w = 1.0;
+					  gl_Position = (unity_MatrixVP * (unity_ObjectToWorld * tmpvar_10));
+					  xlv_TEXCOORD0 = tmpvar_2;
+					  xlv_TEXCOORD3 = normalize((_glesNormal * tmpvar_12));
+					  xlv_TEXCOORD4 = tmpvar_3;
 					}
 					
 					
@@ -986,7 +818,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles3 hw_tier00 " {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_LIGHTMAP" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -1000,10 +832,6 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform 	vec4 _V_CW_PivotPoint_Position;
 					uniform 	vec2 _zero2;
 					uniform 	vec4 _MainTex_ST;
-					uniform 	float _EmmissionMultiplier;
-					uniform 	mediump float _EmmissionRange;
-					uniform 	mediump float _EmissionDistance;
-					uniform 	vec4 _PlayerLocation;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
 					in highp vec3 in_NORMAL0;
@@ -1011,12 +839,8 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					out highp vec3 vs_TEXCOORD3;
 					out highp vec3 vs_TEXCOORD4;
 					vec4 u_xlat0;
-					int u_xlati0;
 					vec4 u_xlat1;
-					vec4 u_xlat2;
-					mediump float u_xlat16_3;
-					int u_xlati4;
-					float u_xlat12;
+					float u_xlat6;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -1036,38 +860,20 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[0] * u_xlat0.xxxx + u_xlat1;
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
-					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[3].xyz * u_xlat0.www + u_xlat1.xyz;
-					    u_xlat1 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
-					    u_xlat2 = u_xlat1.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat1.xxxx + u_xlat2;
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat1.zzzz + u_xlat2;
-					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat1.wwww + u_xlat2;
-					    u_xlat12 = _EmissionDistance + _PlayerLocation.z;
-					    u_xlat12 = (-u_xlat12) + u_xlat0.z;
-					    vs_TEXCOORD4.xyz = u_xlat0.xyz;
-					    u_xlat0.x = -abs(u_xlat12) * 2.0 + _EmmissionRange;
-					    u_xlat16_3 = max(u_xlat0.x, 0.200000003);
-					    vs_TEXCOORD0.z = u_xlat16_3;
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = 0.0<_EmmissionMultiplier; u_xlati0 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati0 = int((0.0<_EmmissionMultiplier) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = _EmmissionMultiplier<0.0; u_xlati4 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati4 = int((_EmmissionMultiplier<0.0) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					    u_xlati0 = (-u_xlati0) + u_xlati4;
-					    u_xlati0 = max(u_xlati0, 0);
-					    vs_TEXCOORD0.w = float(u_xlati0);
+					    vs_TEXCOORD4.xyz = hlslcc_mtx4x4unity_ObjectToWorld[3].xyz * u_xlat0.www + u_xlat1.xyz;
+					    u_xlat0 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_TEXCOORD0.zw = vec2(1.0, 1.0);
 					    u_xlat0.x = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[0].xyz);
 					    u_xlat0.y = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[1].xyz);
 					    u_xlat0.z = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[2].xyz);
-					    u_xlat12 = dot(u_xlat0.xyz, u_xlat0.xyz);
-					    u_xlat12 = inversesqrt(u_xlat12);
-					    vs_TEXCOORD3.xyz = vec3(u_xlat12) * u_xlat0.xyz;
+					    u_xlat6 = dot(u_xlat0.xyz, u_xlat0.xyz);
+					    u_xlat6 = inversesqrt(u_xlat6);
+					    vs_TEXCOORD3.xyz = vec3(u_xlat6) * u_xlat0.xyz;
 					    return;
 					}
 					
@@ -1137,7 +943,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles3 hw_tier01 " {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_LIGHTMAP" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -1151,10 +957,6 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform 	vec4 _V_CW_PivotPoint_Position;
 					uniform 	vec2 _zero2;
 					uniform 	vec4 _MainTex_ST;
-					uniform 	float _EmmissionMultiplier;
-					uniform 	mediump float _EmmissionRange;
-					uniform 	mediump float _EmissionDistance;
-					uniform 	vec4 _PlayerLocation;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
 					in highp vec3 in_NORMAL0;
@@ -1162,12 +964,8 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					out highp vec3 vs_TEXCOORD3;
 					out highp vec3 vs_TEXCOORD4;
 					vec4 u_xlat0;
-					int u_xlati0;
 					vec4 u_xlat1;
-					vec4 u_xlat2;
-					mediump float u_xlat16_3;
-					int u_xlati4;
-					float u_xlat12;
+					float u_xlat6;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -1187,38 +985,20 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[0] * u_xlat0.xxxx + u_xlat1;
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
-					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[3].xyz * u_xlat0.www + u_xlat1.xyz;
-					    u_xlat1 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
-					    u_xlat2 = u_xlat1.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat1.xxxx + u_xlat2;
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat1.zzzz + u_xlat2;
-					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat1.wwww + u_xlat2;
-					    u_xlat12 = _EmissionDistance + _PlayerLocation.z;
-					    u_xlat12 = (-u_xlat12) + u_xlat0.z;
-					    vs_TEXCOORD4.xyz = u_xlat0.xyz;
-					    u_xlat0.x = -abs(u_xlat12) * 2.0 + _EmmissionRange;
-					    u_xlat16_3 = max(u_xlat0.x, 0.200000003);
-					    vs_TEXCOORD0.z = u_xlat16_3;
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = 0.0<_EmmissionMultiplier; u_xlati0 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati0 = int((0.0<_EmmissionMultiplier) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = _EmmissionMultiplier<0.0; u_xlati4 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati4 = int((_EmmissionMultiplier<0.0) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					    u_xlati0 = (-u_xlati0) + u_xlati4;
-					    u_xlati0 = max(u_xlati0, 0);
-					    vs_TEXCOORD0.w = float(u_xlati0);
+					    vs_TEXCOORD4.xyz = hlslcc_mtx4x4unity_ObjectToWorld[3].xyz * u_xlat0.www + u_xlat1.xyz;
+					    u_xlat0 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_TEXCOORD0.zw = vec2(1.0, 1.0);
 					    u_xlat0.x = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[0].xyz);
 					    u_xlat0.y = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[1].xyz);
 					    u_xlat0.z = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[2].xyz);
-					    u_xlat12 = dot(u_xlat0.xyz, u_xlat0.xyz);
-					    u_xlat12 = inversesqrt(u_xlat12);
-					    vs_TEXCOORD3.xyz = vec3(u_xlat12) * u_xlat0.xyz;
+					    u_xlat6 = dot(u_xlat0.xyz, u_xlat0.xyz);
+					    u_xlat6 = inversesqrt(u_xlat6);
+					    vs_TEXCOORD3.xyz = vec3(u_xlat6) * u_xlat0.xyz;
 					    return;
 					}
 					
@@ -1288,7 +1068,7 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					#endif"
 				}
 				SubProgram "gles3 hw_tier02 " {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_KEYBOARD" }
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_FRESNEL" "_SHAPE_LIGHTMAP" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -1302,10 +1082,6 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					uniform 	vec4 _V_CW_PivotPoint_Position;
 					uniform 	vec2 _zero2;
 					uniform 	vec4 _MainTex_ST;
-					uniform 	float _EmmissionMultiplier;
-					uniform 	mediump float _EmmissionRange;
-					uniform 	mediump float _EmissionDistance;
-					uniform 	vec4 _PlayerLocation;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
 					in highp vec3 in_NORMAL0;
@@ -1313,12 +1089,8 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					out highp vec3 vs_TEXCOORD3;
 					out highp vec3 vs_TEXCOORD4;
 					vec4 u_xlat0;
-					int u_xlati0;
 					vec4 u_xlat1;
-					vec4 u_xlat2;
-					mediump float u_xlat16_3;
-					int u_xlati4;
-					float u_xlat12;
+					float u_xlat6;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -1338,38 +1110,20 @@ Shader "CustomShader/Unlit/EmissionTile" {
 					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_ObjectToWorld[1];
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[0] * u_xlat0.xxxx + u_xlat1;
 					    u_xlat1 = hlslcc_mtx4x4unity_ObjectToWorld[2] * u_xlat0.zzzz + u_xlat1;
-					    u_xlat0.xyz = hlslcc_mtx4x4unity_ObjectToWorld[3].xyz * u_xlat0.www + u_xlat1.xyz;
-					    u_xlat1 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
-					    u_xlat2 = u_xlat1.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat1.xxxx + u_xlat2;
-					    u_xlat2 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat1.zzzz + u_xlat2;
-					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat1.wwww + u_xlat2;
-					    u_xlat12 = _EmissionDistance + _PlayerLocation.z;
-					    u_xlat12 = (-u_xlat12) + u_xlat0.z;
-					    vs_TEXCOORD4.xyz = u_xlat0.xyz;
-					    u_xlat0.x = -abs(u_xlat12) * 2.0 + _EmmissionRange;
-					    u_xlat16_3 = max(u_xlat0.x, 0.200000003);
-					    vs_TEXCOORD0.z = u_xlat16_3;
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = 0.0<_EmmissionMultiplier; u_xlati0 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati0 = int((0.0<_EmmissionMultiplier) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					#ifdef UNITY_ADRENO_ES3
-					    { bool cond = _EmmissionMultiplier<0.0; u_xlati4 = int(!!cond ? 0xFFFFFFFFu : uint(0u)); }
-					#else
-					    u_xlati4 = int((_EmmissionMultiplier<0.0) ? 0xFFFFFFFFu : uint(0u));
-					#endif
-					    u_xlati0 = (-u_xlati0) + u_xlati4;
-					    u_xlati0 = max(u_xlati0, 0);
-					    vs_TEXCOORD0.w = float(u_xlati0);
+					    vs_TEXCOORD4.xyz = hlslcc_mtx4x4unity_ObjectToWorld[3].xyz * u_xlat0.www + u_xlat1.xyz;
+					    u_xlat0 = u_xlat1 + hlslcc_mtx4x4unity_ObjectToWorld[3];
+					    u_xlat1 = u_xlat0.yyyy * hlslcc_mtx4x4unity_MatrixVP[1];
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[0] * u_xlat0.xxxx + u_xlat1;
+					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
+					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    vs_TEXCOORD0.zw = vec2(1.0, 1.0);
 					    u_xlat0.x = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[0].xyz);
 					    u_xlat0.y = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[1].xyz);
 					    u_xlat0.z = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[2].xyz);
-					    u_xlat12 = dot(u_xlat0.xyz, u_xlat0.xyz);
-					    u_xlat12 = inversesqrt(u_xlat12);
-					    vs_TEXCOORD3.xyz = vec3(u_xlat12) * u_xlat0.xyz;
+					    u_xlat6 = dot(u_xlat0.xyz, u_xlat0.xyz);
+					    u_xlat6 = inversesqrt(u_xlat6);
+					    vs_TEXCOORD3.xyz = vec3(u_xlat6) * u_xlat0.xyz;
 					    return;
 					}
 					
