@@ -47,8 +47,8 @@ Shader "CustomShader/Unlit/Object" {
 			Program "vp" {
 
 
-			SubProgram "gles3 hw_tier" {
-					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_CURVED_WORLD" }
+			SubProgram "gles3 hw_tier02 " {
+					Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "ENABLE_CURVED_WORLD" "ENABLE_DIFFUSE" "ENABLE_FOG" "ENABLE_FAKE_LIGHTING" "ENABLE_FRESNEL" "ENABLE_SPECULAR" }
 					"!!GLES3
 					//ShaderGLESExporter
 					#ifdef VERTEX
@@ -64,10 +64,13 @@ Shader "CustomShader/Unlit/Object" {
 					uniform 	vec4 _MainTex_ST;
 					in highp vec4 in_POSITION0;
 					in highp vec4 in_TEXCOORD0;
+					in highp vec3 in_NORMAL0;
 					out highp vec2 vs_TEXCOORD0;
+					out highp vec3 vs_TEXCOORD1;
 					out highp vec3 vs_TEXCOORD2;
 					vec4 u_xlat0;
 					vec4 u_xlat1;
+					float u_xlat6;
 					void main()
 					{
 					    u_xlat0.x = in_POSITION0.y * hlslcc_mtx4x4unity_ObjectToWorld[1].z;
@@ -94,6 +97,12 @@ Shader "CustomShader/Unlit/Object" {
 					    u_xlat1 = hlslcc_mtx4x4unity_MatrixVP[2] * u_xlat0.zzzz + u_xlat1;
 					    gl_Position = hlslcc_mtx4x4unity_MatrixVP[3] * u_xlat0.wwww + u_xlat1;
 					    vs_TEXCOORD0.xy = in_TEXCOORD0.xy * _MainTex_ST.xy + _MainTex_ST.zw;
+					    u_xlat0.x = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[0].xyz);
+					    u_xlat0.y = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[1].xyz);
+					    u_xlat0.z = dot(in_NORMAL0.xyz, hlslcc_mtx4x4unity_WorldToObject[2].xyz);
+					    u_xlat6 = dot(u_xlat0.xyz, u_xlat0.xyz);
+					    u_xlat6 = inversesqrt(u_xlat6);
+					    vs_TEXCOORD1.xyz = vec3(u_xlat6) * u_xlat0.xyz;
 					    return;
 					}
 					
@@ -102,22 +111,89 @@ Shader "CustomShader/Unlit/Object" {
 					#version 300 es
 					
 					precision highp int;
+					uniform 	vec3 _WorldSpaceCameraPos;
+					uniform 	mediump vec4 glstate_lightmodel_ambient;
 					uniform 	mediump vec4 _Color;
 					uniform 	mediump vec3 _EmissionColor;
 					uniform 	mediump float _Emmission;
+					uniform 	mediump float _DiffusePower;
+					uniform 	mediump vec3 _SpecularColor;
+					uniform 	mediump float _SpecularPower;
+					uniform 	mediump float _Gloss;
+					uniform 	mediump vec3 _FresnelColor;
+					uniform 	mediump float _FresnelPower;
+					uniform 	mediump float _FresnelScale;
+					uniform 	mediump vec3 _FakeLightColor;
+					uniform 	mediump vec4 _FakeLightDir;
+					uniform 	mediump float _AmbientColorPower;
 					uniform lowp sampler2D _MainTex;
 					in highp vec2 vs_TEXCOORD0;
+					in highp vec3 vs_TEXCOORD1;
+					in highp vec3 vs_TEXCOORD2;
 					layout(location = 0) out mediump vec4 SV_Target0;
-					mediump vec4 u_xlat16_0;
+					vec3 u_xlat0;
 					lowp vec4 u_xlat10_0;
 					mediump vec3 u_xlat16_1;
+					mediump vec3 u_xlat16_2;
+					vec3 u_xlat3;
+					mediump float u_xlat16_4;
+					mediump vec3 u_xlat16_6;
+					mediump vec3 u_xlat16_7;
+					float u_xlat15;
+					mediump float u_xlat16_16;
 					void main()
 					{
+					    u_xlat0.xyz = (-vs_TEXCOORD2.xyz) + _WorldSpaceCameraPos.xyz;
+					    u_xlat15 = dot(u_xlat0.xyz, u_xlat0.xyz);
+					    u_xlat15 = inversesqrt(u_xlat15);
+					    u_xlat0.xyz = vec3(u_xlat15) * u_xlat0.xyz;
+					    u_xlat16_1.x = dot(_FakeLightDir, _FakeLightDir);
+					    u_xlat16_1.x = inversesqrt(u_xlat16_1.x);
+					    u_xlat16_6.xyz = _FakeLightDir.xyz * u_xlat16_1.xxx + u_xlat0.xyz;
+					    u_xlat16_2.xyz = u_xlat16_1.xxx * _FakeLightDir.xyz;
+					    u_xlat16_1.x = dot(u_xlat16_6.xyz, u_xlat16_6.xyz);
+					    u_xlat16_1.x = inversesqrt(u_xlat16_1.x);
+					    u_xlat16_1.xyz = u_xlat16_1.xxx * u_xlat16_6.xyz;
+					    u_xlat15 = dot(vs_TEXCOORD1.xyz, vs_TEXCOORD1.xyz);
+					    u_xlat15 = inversesqrt(u_xlat15);
+					    u_xlat3.xyz = vec3(u_xlat15) * vs_TEXCOORD1.xyz;
+					    u_xlat16_1.x = dot(u_xlat3.xyz, u_xlat16_1.xyz);
+					    u_xlat16_1.x = max(u_xlat16_1.x, 0.0);
+					    u_xlat16_1.x = log2(u_xlat16_1.x);
+					    u_xlat16_1.x = u_xlat16_1.x * _Gloss;
+					    u_xlat16_1.x = exp2(u_xlat16_1.x);
+					    u_xlat16_6.xyz = vec3(_SpecularColor.xxyz.y * _FakeLightColor.xxyz.y, _SpecularColor.xxyz.z * _FakeLightColor.xxyz.z, float(_SpecularColor.z) * float(_FakeLightColor.z));
+					    u_xlat16_1.xyz = u_xlat16_1.xxx * u_xlat16_6.xyz;
+					    u_xlat16_1.xyz = u_xlat16_1.xyz * vec3(_SpecularPower);
+					    u_xlat16_16 = dot(u_xlat3.xyz, u_xlat16_2.xyz);
+					    u_xlat16_2.x = dot(u_xlat0.xyz, u_xlat3.xyz);
+					    u_xlat16_2.x = (-u_xlat16_2.x) + 1.0;
+					    u_xlat16_16 = max(u_xlat16_16, 0.0);
 					    u_xlat10_0 = texture(_MainTex, vs_TEXCOORD0.xy);
-					    u_xlat16_1.xyz = u_xlat10_0.xyz * vec3(vec3(_Emmission, _Emmission, _Emmission));
-					    u_xlat16_0 = u_xlat10_0 * _Color;
-					    SV_Target0.xyz = u_xlat16_1.xyz * _EmissionColor.xyz + u_xlat16_0.xyz;
-					    SV_Target0.w = u_xlat16_0.w;
+					    u_xlat16_7.xyz = vec3(u_xlat10_0.x * _FakeLightColor.xxyz.y, u_xlat10_0.y * _FakeLightColor.xxyz.z, u_xlat10_0.z * float(_FakeLightColor.z));
+					    u_xlat16_7.xyz = u_xlat16_7.xyz * _Color.xyz;
+					    u_xlat16_7.xyz = vec3(u_xlat16_16) * u_xlat16_7.xyz;
+					    u_xlat16_1.xyz = u_xlat16_7.xyz * vec3(_DiffusePower) + u_xlat16_1.xyz;
+					    u_xlat16_7.xyz = (-u_xlat16_1.xyz) + _FresnelColor.xyz;
+					    u_xlat16_16 = u_xlat16_2.x * u_xlat16_2.x;
+					    u_xlat16_16 = u_xlat16_16 * u_xlat16_16;
+					    u_xlat16_4 = (-_FresnelScale) + 1.0;
+					    u_xlat16_16 = u_xlat16_16 * u_xlat16_4;
+					    u_xlat16_16 = u_xlat16_16 * u_xlat16_2.x + _FresnelScale;
+					    u_xlat16_16 = u_xlat16_16 * _FresnelPower;
+					#ifdef UNITY_ADRENO_ES3
+					    u_xlat16_16 = min(max(u_xlat16_16, 0.0), 1.0);
+					#else
+					    u_xlat16_16 = clamp(u_xlat16_16, 0.0, 1.0);
+					#endif
+					    u_xlat16_1.xyz = vec3(u_xlat16_16) * u_xlat16_7.xyz + u_xlat16_1.xyz;
+					    u_xlat16_2.xyz = glstate_lightmodel_ambient.xyz + glstate_lightmodel_ambient.xyz;
+					    u_xlat16_2.xyz = u_xlat10_0.xyz * u_xlat16_2.xyz;
+					    u_xlat16_2.xyz = u_xlat16_2.xyz * _Color.xyz;
+					    u_xlat16_1.xyz = u_xlat16_2.xyz * vec3(_AmbientColorPower) + u_xlat16_1.xyz;
+					    u_xlat16_2.xyz = u_xlat10_0.xyz * vec3(vec3(_Emmission, _Emmission, _Emmission));
+					    SV_Target0.w = u_xlat10_0.w * _Color.w;
+					    SV_Target0.xyz = u_xlat16_2.xyz * _EmissionColor.xyz + u_xlat16_1.xyz;
 					    return;
 					}
 					
