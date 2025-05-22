@@ -1,0 +1,5442 @@
+{
+  "Name": "com.unity.render-pipelines.core",
+  "Version": "https://github.com/StressLevelZero/Custom-RenderPipelineCore.git",
+  "UsedInPackageJson": true,
+  "Assemblies": {
+    "Magick.NET.Core": "830eb0e411c18164aa342447648ab2f5",
+    "Magick.NET-Q16-AnyCPU": "469686a1029c9f04ca2279cde1ed90d1",
+    "Magick.Native-Q16-x86": "07f8b1597c5a6f94a88d6bf8e7b8ef60",
+    "ExtraTextureSettings": "a7f80ee7e76ca8d48856c11d470656c8",
+    "Magick.Native-Q16-x64": "9c7e6466b59da8843bac0ae59453c841",
+    "SLZNormalMapPostProcessor": "dccaa5bffb16ffb4a97abc4a1ee85ea4"
+  },
+  "Assets": [
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerIndirectToggle"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "0012fc4688b5d5342a441aa32c0e099e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 128,
+        "Height": 128,
+        "Name": "PolygonFlareThumbnail@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0047263fa58f91d49a61936e94358829",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 19455,
+        "Hash": 267343291981754858156550589693585672039,
+        "Name": "CHANGELOG"
+      },
+      "Value": {
+        "FileID": 4900000,
+        "Guid": "20456a2cc8a214f9d9846725cff9fea4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "CenterLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "3092b2985cafe0b43b1f02ce1d6829d5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "CenterLight",
+        "Name": "CenterLight"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "3092b2985cafe0b43b1f02ce1d6829d5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Validate"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "30ba55673585a6e4f9afd796eb8b170e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Layout2@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "50f7a3e9878119a4da02f38cf05d75ba",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Layout2@2x",
+        "Name": "d_Layout2@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "50f7a3e9878119a4da02f38cf05d75ba",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "BlueSky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "60d4d0573fefbf24198d33863004e7f9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Camera1@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "603d01d730be24147adda7897e463598",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Camera1@2x",
+        "Name": "d_Camera1@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "603d01d730be24147adda7897e463598",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "CenterLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8063050a249eef441beb8cbbd04c086c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "CenterLight@2x",
+        "Name": "CenterLight@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "8063050a249eef441beb8cbbd04c086c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Overcast"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "80a48b3afafdc644fb4e3319f6f19fc8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "CircleFlareThumbnail"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "80b74a073fa3027458f3b3ff5346f10b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_LeftArrow@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "90335e5423c010749a50f906b965fa54",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LeftArrow@2x",
+        "Name": "d_LeftArrow@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "90335e5423c010749a50f906b965fa54",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "LensFlareDataSRPEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "90a396453bc7183469e9497f37393dcb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Debug"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "90f3145f58b7eb44cb4252ac2a3ab258",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "IESObject"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "901e3026412fba146ab1b63bfc229b78",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "ClearSky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a01d783415aa03a449e3408eb92d8505",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Overcast"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "c0e6cc200fb1dda4388b13d9f5828d06",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_SoftAreaLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e0171afec971f2343be8d5b4b14ab6eb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "LeftArrow@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f0106cef986be534181a8582cffd29da",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LeftArrow@2x",
+        "Name": "LeftArrow@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "f0106cef986be534181a8582cffd29da",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PolygonFlareThumbnail"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f0326f07dd50365439f552e7f29218e5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "SampleUVMappingInternal"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "01b8f0e33ff01164da19412b5fbdc7d4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Random"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "11914c30949383848ab39385375eff34",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "DebugWindow"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "41147144ff556e246b736135eb26f185",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Moonlight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "41c40f1973262eb41a56a66faaf2154d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Environment@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "515b65dc95319f3409d6b0b5f866ac33",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Environment@2x",
+        "Name": "Environment@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "515b65dc95319f3409d6b0b5f866ac33",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Refraction"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "61125f624d229884d8cff04fc0fceab7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering.LookDev",
+        "ClassName": "Environment"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "612aa45d38dd94a479185b83f080aa22",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "FreeCamera"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "618b0e3f6c65dd247a4a016150006c57",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Shade"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "7146ed2a10f80c340b4c181e2892c87a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_MoonlessNight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "71cd3069e265067478f8e99589235fd6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Fluorescent@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "81321ffad3c324c42806d47efb84d4d1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "LensFlareComponentSRPEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "8147550de37fb934ca443edbf044e01e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Duplicate@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "91ffd37b0545bf6448f8d937736130a1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Duplicate@2x",
+        "Name": "Duplicate@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "91ffd37b0545bf6448f8d937736130a1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Shader",
+        "PropertyNames": [
+          "_MainTex",
+          "_CubeToLatLongParams",
+          "_WindowParams"
+        ],
+        "Name": "Hidden/LookDev/CubeToLatlong"
+      },
+      "Value": {
+        "FileID": 4800000,
+        "Guid": "a16365e8c873daa4c94919438490b905",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_CenterLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a14e6ee680df42f4c99bf69bc3d6b9ca",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_CenterLight@2x",
+        "Name": "d_CenterLight@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "a14e6ee680df42f4c99bf69bc3d6b9ca",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 40,
+        "Height": 60,
+        "Name": "UpSnatch"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a1fe8ebe91e101d47af42adec440c3e5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_InteriorLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b1a064fab2aa93e47bd8d558a6ca655b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_MediumAreaLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b1826d69c1fcad9488491937a1ef4d84",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "SoftAreaLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b14c34aa843e4a14e957505ae407e8c3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Experimental.Rendering",
+        "ClassName": "ProbeVolumeAsset"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "c1043e08cdc375146bdb853794c4c0fd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Advanced_Pressed_mini"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "c1d870384c7ed3c49b30d01278bf3949",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_DecorativeLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e194061ed57dcf6478bc4a4079ac3998",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "RightArrow@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e194270977977b24da0c6e1c962a5ce9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "RightArrow@2x",
+        "Name": "RightArrow@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "e194270977977b24da0c6e1c962a5ce9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "FilterWindow"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e1dbde6eddba87f4ea272a5d3af5b7ac",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "SoftAreaLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e10d9c07adc061a448e00b3e33fad966",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "UnityInstancing"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "e1cfc5ca61db3d448825f316ff92cb0b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerCanvasEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "f1d41f85c15ac6048a850b51ff36c098",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Experimental.Rendering",
+        "ClassName": "ProbeVolumeEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "f1ae0052b83ef5d4db2deea6f9aa8236",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 128,
+        "Height": 128,
+        "Name": "IESProfile"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0283fe60f65159b4a86ebabf444e23f9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_LayoutVertical"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "02c3588c32f640d47bb70ee3fa774fce",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LayoutVertical",
+        "Name": "d_LayoutVertical"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "02c3588c32f640d47bb70ee3fa774fce",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 1,
+        "Height": 1,
+        "Name": "White1px"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "127279d577f25ac4ea17dae3782e5074",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "White1px",
+        "Name": "White1px"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "127279d577f25ac4ea17dae3782e5074",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "SDF2D"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "325b1a823e35d84478e89669f808ecb9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "BlueSky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "42382485181c7b4429560828f54a2bae",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Camera1@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "52b3ad4181ffbec4cad6eb26d07127f6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Camera1@2x",
+        "Name": "Camera1@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "52b3ad4181ffbec4cad6eb26d07127f6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Fluorescent"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "52dd14d6fa6ca2d46b942c8289a898eb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "DebugState"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "7270f3dffc138834da5642e5943f5072",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Layout1@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8263f1f26524404498d51bfe0b819925",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Layout1@2x",
+        "Name": "Layout1@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "8263f1f26524404498d51bfe0b819925",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "LensFlareCommon"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "a279154a65cb87e46a9922aeaf9b7bc4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_IntenseAreaLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a20ce10a62e5d924a84f1a723e96c07e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerMessageBox"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e25c98bed7eaeec4cb32c57a5280f85e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "NamedObject",
+        "TypeID": 72,
+        "Name": "NormalEncoder"
+      },
+      "Value": {
+        "FileID": 7200000,
+        "Guid": "e2fe75319bd376544866c7bdf0385b90",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 11,
+        "Height": 11,
+        "Name": "UIArrowDown"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f224bfd122877a34aa49c63693fc317b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "UIArrowDown",
+        "Name": "UIArrowDown"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "f224bfd122877a34aa49c63693fc317b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "EntityLighting"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "0303be75670325342b4bf5697686e77b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "DirectSunlight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "03ea000956f47584c872d8b4df47f5ee",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Overcast@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "036f58abb8f232d41b3928a31433cf81",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Camera1"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2384eb5de05269b44a58f8dd1d83d725",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Camera1",
+        "Name": "Camera1"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "2384eb5de05269b44a58f8dd1d83d725",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Color"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "23284bbc36146a94995a8a08e61f4e73",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerVector4"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "3324982f72b9e2c468cca0fb7a753195",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Candlelight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "3387986904fe97b4cb1a1b607d1e7039",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Shader",
+        "PropertyNames": [
+          "_Tex0MainView",
+          "_Tex0Shadows",
+          "_ShadowColor0",
+          "_Tex1MainView",
+          "_Tex1Shadows",
+          "_ShadowColor1",
+          "_CompositingParams",
+          "_CompositingParams2",
+          "_FirstViewColor",
+          "_SecondViewColor",
+          "_GizmoPosition",
+          "_GizmoZoneCenter",
+          "_GizmoSplitPlane",
+          "_GizmoSplitPlaneOrtho",
+          "_GizmoLength",
+          "_GizmoThickness",
+          "_GizmoCircleRadius",
+          "_GizmoRenderMode",
+          "_GetBlendFactorMaxGizmoDistance",
+          "_BlendFactorCircleRadius",
+          "_ScreenRatio",
+          "_ToneMapCoeffs1",
+          "_ToneMapCoeffs2"
+        ],
+        "Name": "Hidden/LookDev/Compositor"
+      },
+      "Value": {
+        "FileID": 4800000,
+        "Guid": "4386e57b23a56004c93e1d57d2bbcb4f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ProbePlacement.cs"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "53a7b15acf3ceaf41b7f56dbca27f6c8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Macros"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "6300b0e79f5d15e499b9d6b5d23ca01b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Fibonacci"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "63275e6ba7e477f43a376217dc2e147f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_DecorativeLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "73e9cf59769215c4892d0a8008f39737",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_LayoutHorizontal"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "83cbec96661199e408a744d4c3e586e2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LayoutHorizontal",
+        "Name": "d_LayoutHorizontal"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "83cbec96661199e408a744d4c3e586e2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "CommonLighting"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "93bbf250faa37d446990b9501e7fb7e8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Shader",
+        "PropertyNames": [
+          "_MipSource",
+          "_Mip"
+        ],
+        "Name": "Hidden/NormalMapPPBlitLOD"
+      },
+      "Value": {
+        "FileID": 4800000,
+        "Guid": "a3673d1f4f925da47893912222d3c641",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "ExteriorLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a3fe770bc25a98540958d57e10f2a5fd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "UICheckMark",
+        "Name": "UICheckMark"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "b346b2a2df1d290438be3287b6419408",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 11,
+        "Height": 11,
+        "Name": "UICheckMark"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b346b2a2df1d290438be3287b6419408",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Advanced_UnPressed_mini"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b356b95f05b77cf49a1b8241134f44c4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "CloudySky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "c30d00a81d6542c40ae1837621e3969e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ffx_a"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "e3711cae0eaec834eb4ae197be7dd569",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "SampleUVMapping"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "f3e4d64dcf820e040a738f576d8d1f79",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "LayoutHorizontal@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f3fe1e478135ed34db9a1f6707f52c6a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LayoutHorizontal@2x",
+        "Name": "LayoutHorizontal@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "f3fe1e478135ed34db9a1f6707f52c6a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_IntenseAreaLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0493fb4c3bbfd6a4396f7f221b5ce034",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "BrightSky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "04c70b69874deb746a4c63f1a29f7715",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Remove@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "049c8a7821177594692244298d82e4af",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Remove@2x",
+        "Name": "Remove@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "049c8a7821177594692244298d82e4af",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "GLES3"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "14a46e0dac04a0245b3f95359167b663",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "CommonMaterial"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "540178d5ddc29e74da771e38536aee22",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Filtering"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "54ca0b3b7814f804aac1450b38477c74",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "CommonHighP"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "642d4167eb96cbc48a9a12039ebba532",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "NamedObject",
+        "TypeID": 128,
+        "Name": "PerfectDOSVGA437"
+      },
+      "Value": {
+        "FileID": 12800000,
+        "Guid": "74a5091d8707f334b9a5c31ef71a64ba",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetFill_Left"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "84767f608f72f5a4090837fc328dd75f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_LeftArrow"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "84189b4c7caeef3419b6b031b8812685",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LeftArrow",
+        "Name": "d_LeftArrow"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "84189b4c7caeef3419b6b031b8812685",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": null,
+        "ClassName": "RenderGraphViewer"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "84ea5d606d0d22a488a9047cff058078",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_SoftAreaLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "940a20d919196f1408474a7b7057f4b9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Link"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "94ec4fdf9502c3747b5c0754ca18919e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Link",
+        "Name": "d_Link"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "94ec4fdf9502c3747b5c0754ca18919e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Environment@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a4638c6b8e07c0b49822ed7a91a96d0a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Environment@2x",
+        "Name": "d_Environment@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "a4638c6b8e07c0b49822ed7a91a96d0a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "RenderPipelineResources"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "b43eb475bb161a44f9da1fc2fd1fff41",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerIndirectFloatField"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "c42b71ff0e23e2d4a8a32a2bc85acac0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "UIElement8px",
+        "Name": "UIElement8px"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "d49e78756811bfa4aafb8b6535417991",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 8,
+        "Height": 8,
+        "Name": "UIElement8px"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d49e78756811bfa4aafb8b6535417991",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "IntenseAreaLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d4df75c76c1661847b6902f889b44bcb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerUIntField"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e4700d8d03bde1e4c9138b22dc84d06e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_VeryBrightSun@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e4e685bec200b3c45a29e88e2eeb8ddb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "UIFoldout"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e4786b5477cac0a42855b21fdaa2242f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 256,
+        "Height": 256,
+        "Name": "VolumeProfileAsset"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f441155d8b9218f4183e81bb4a27253d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Metal"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "f4d51e77f119d4dc8899ff02b46bb621",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Sampling"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "f4c850bea2c5d45449ba8e228333c82c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 40,
+        "Height": 60,
+        "Name": "DownSnatch"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f4efccbcc00042141b8f7f63392439b5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Vulkan"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "05a00b34d7740a643a8a6de19c6d9aa6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "PhysicalCamera"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "259e4e1d42f9302459819d218966a11c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Layout2@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "356caeb1305bf794e94ecd5161f8e6e3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Layout2@2x",
+        "Name": "Layout2@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "356caeb1305bf794e94ecd5161f8e6e3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Duplicate"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "352dd7fc77ee28c479bf6504efe94f16",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Duplicate",
+        "Name": "Duplicate"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "352dd7fc77ee28c479bf6504efe94f16",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Link"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "45751a4124f67c443bf96ed1df7c550b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Link",
+        "Name": "Link"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "45751a4124f67c443bf96ed1df7c550b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerVector2"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "45cb393cffafe3e4292c35a3a3a94c26",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor",
+        "ClassName": "LightAnchorEditorTool"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "5500b139b5ad27349abf7ca9ddbd6556",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "VolumeComponent"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "556096baecf4aeb4e9f0d3efce77e08f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerToggleHistory"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "5535c6474b864a44eb65121514d1edd2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 210,
+        "Hash": 103212147242591954122226407055179546379,
+        "Name": "ValidationConfig"
+      },
+      "Value": {
+        "FileID": 4900000,
+        "Guid": "75497c58fb28415a98098a98e7133272",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 603,
+        "Hash": 62278659469210161897309279535544904747,
+        "Name": "package"
+      },
+      "Value": {
+        "FileID": 8385607101436470782,
+        "Guid": "753d1ac2429a21a44ac5f937cbbb409f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "LookDev"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "85099cb723efe4444a23b08281d721c2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LookDev",
+        "Name": "LookDev"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "85099cb723efe4444a23b08281d721c2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_BrightSky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a543c2d2147884347a1846e862efa72f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Remove"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a5c48bfebeb031a4b8d66da4be0e27b9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Remove",
+        "Name": "Remove"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "a5c48bfebeb031a4b8d66da4be0e27b9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Common"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "a57f9f83ea626ae45b402953fe637268",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_InteriorLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b5a2e773c2799aa42a4e99429158896e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ACES"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "b52d68e305b98a94bac88855d8ea5936",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "GraniteShaderLibBase"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "c5520328ccc5d6c4e8a923677cbb21cf",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerGroup"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "c5d44b76204264d4eb90d4a92b067d7d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 1024,
+        "Height": 4,
+        "Name": "HorizontalGradient"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "c56daa0c35d8542449aea902efda87ce",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Blit"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "d55706914cfa84431bb4f9277ebd1054",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_MoonlessNight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d56ac7ee03f65c7408f8f3d5aeecdb86",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Moonlight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f520337c0c5dde34fa2d4207d953a31f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "MoonlessNight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f50a266376427a041b4e1b629d07611d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "CameraSwitcher"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "f52d1e5345c395641b482217c8804ff9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "RenderPipelineResourcesEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "f5ff1027825046c46884c3ad73d26610",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": null,
+        "ClassName": "SceneRenderPipeline"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "06c0317e0632e6c47bb855ee99f95544",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "SpaceFillingCurves"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "063144fddd2c1be41b9d09dec6314fc7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_LookDev"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0615fe8910911be4299d5604a54db99a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LookDev",
+        "Name": "d_LookDev"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "0615fe8910911be4299d5604a54db99a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Add"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "160b197aba549514286b94426ceae589",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Add",
+        "Name": "d_Add"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "160b197aba549514286b94426ceae589",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 58,
+        "Hash": 287826706721856080402253851090842753458,
+        "Name": "Unity.RenderPipelines.Core.ShaderLibrary"
+      },
+      "Value": {
+        "FileID": 5897886265953266890,
+        "Guid": "46a67ded66a63de48b9329c593fc08de",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Camera1"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "56c35c86bb44b0e4e84a22db56968157",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Camera1",
+        "Name": "d_Camera1"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "56c35c86bb44b0e4e84a22db56968157",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "DecodeSH"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "6646f462aeb8278489c25fda24fd2db8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerBitField"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "662c81b0e51f80a4797c39bbd7116f9a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_ClearSky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "76c10465276fcb9498b1fd312e3f74ed",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "VolumeRendering"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "76b6dbce57ad3e647a01b5ad36f737a5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerCanvas"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "76db615e524a19c4990482d75a475543",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_DirectSunlight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "76bf11a78c4428b4eb6b567a160a0c83",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "DirectSunlight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "863ef838c25e51b4790fd6ac881ba895",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Version"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "96eb0e7285e8ec64b9b711f1e6b78dea",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "UIFoldoutOpened",
+        "Name": "UIFoldoutOpened"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "a674720496c1ed248a5b7ea3e22a11fd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 11,
+        "Height": 11,
+        "Name": "UIFoldoutOpened"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "a674720496c1ed248a5b7ea3e22a11fd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "NormalSurfaceGradient"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "b6ff088bebec9f941ae19a0086e4f097",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ParallaxMapping"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "c6976b17260ed7d4ca3810ae8488f67f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering.LookDev",
+        "ClassName": "Context"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e6c442cd75783b64283e30cff5a7d377",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ProbeReferenceVolume.Debug.cs"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "f6e06ceb4cc6a38458f4b614e8000dc8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Moonlight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f64528e1d51f6d74c9f7a1738deaa602",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 40,
+        "Height": 60,
+        "Name": "DownSnatchFocused"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "f6ca176a623705248878abeaf560002a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "SpaceTransforms"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "07d22e3065efb5a489e5e2644df19bc7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "Volume"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "172515602e62fb746b5d573b38a5fe58",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "GLCore"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "17e9ff94ac9e8aa4e81b23222a4dc205",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "BC6H"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "27d419a4917d0ea49978c236e058d464",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 128,
+        "Height": 128,
+        "Name": "CircleFlareThumbnail@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "37e93113453ac0d46863acd4090899c8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "VeryBrightSun@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "37ca6c7ad753f1648a24db2b740ba2ca",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "GLES2"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "4763738e37aef3949b7a83aae926cff5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_LayoutVertical@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "472b4042959bbd844b8fd760bddd7a47",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LayoutVertical@2x",
+        "Name": "d_LayoutVertical@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "472b4042959bbd844b8fd760bddd7a47",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "GlobalSamplers"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "47ecc1e1971024be4a44aa322690660e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "VolumeProfileEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "77e4433a29bc5b547a429fcd8552c691",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerPersistentCanvas"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "87177621604658d4e893f55be7cfae4a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "LensFlareDataSRP"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "877e1507ae8d81c40bf1b94c1a86036f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_LayoutCustom@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b753c88a6aeb2674fa1d4f0a4c0a285a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LayoutCustom@2x",
+        "Name": "d_LayoutCustom@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "b753c88a6aeb2674fa1d4f0a4c0a285a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerWidget"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "b70527f884154e34488f81fce789ef50",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "MetaPass"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "d7414e735eb09cd40855d8142a1c2e18",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 128,
+        "Height": 128,
+        "Name": "Flare128"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d7b90718ad2a7af4aab8546a0897d5db",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "VolumeProfile"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "d7fd9488000d3734a9e00ee676215985",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_SunriseSunset@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e737fd1dd31046c4da43e8ba94fdaf63",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_CloudySky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "088373792f5db604fa5b045cb5dff9c9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_VeryBrightSun"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "083778a134a402a4f82b55a98ac21530",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Camera2"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "281160d54742cbb44a88a61bf8ccfb16",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Camera2",
+        "Name": "d_Camera2"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "281160d54742cbb44a88a61bf8ccfb16",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Camera2@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "28f2917353630ce4fa307eeceadcd26d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Camera2@2x",
+        "Name": "Camera2@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "28f2917353630ce4fa307eeceadcd26d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_RightArrow@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "28d47cbaafc98254f8d4f6184dff22cd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_RightArrow@2x",
+        "Name": "d_RightArrow@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "28d47cbaafc98254f8d4f6184dff22cd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Experimental.Rendering",
+        "ClassName": "ProbeReferenceVolumeProfile"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "4881f9a2c4d568047b316028d20a8dca",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerRow"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "4822e5675c12bf14d93b254d27ec8bd7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ProbeVolume"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "688129ab15b222340a2c7fa427269889",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "IESImporter"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "9801397f829a1ed42984340315cbf362",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Layout2"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "98b5b3e7c51d32547b9b09232034b5d5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Layout2",
+        "Name": "d_Layout2"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "98b5b3e7c51d32547b9b09232034b5d5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering.LookDev",
+        "ClassName": "EnvironmentLibrary"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "985c12cb5f71c6440825869433552460",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Environment"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "98cefb354c00bc44cb31fffd52dc4650",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Environment",
+        "Name": "d_Environment"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "98cefb354c00bc44cb31fffd52dc4650",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Experimental.Rendering",
+        "ClassName": "ProbeVolumePerSceneData"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "a83d2f7ae04ab6f4f99b0d85377be998",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "CommonShadow"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "a85db80be6def144e938df4cbf0d1aa6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetFill_Right"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "c8e3d80f5ead8d4409a54da768cc431d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Shader",
+        "PropertyNames": [],
+        "Name": "Hidden/ProbeVolume/VoxelizeScene"
+      },
+      "Value": {
+        "FileID": 4800000,
+        "Guid": "c8b6a681c7b4e2e4785ffab093907f9e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Moonlight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d8bb1a60805d8d241acc12f74cd3b2d5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "SunriseSunset"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d8ee4aa2fab810242a1ff465e662bc09",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering.UI",
+        "ClassName": "UIFoldoutEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e89075dc59755d8479f34df9e20926e1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Switch"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "e81335bf0a3c45c4fa81ed2fe67eeba0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerHBox"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "e8261e6f2e5fac44da64da2b23939e9a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Camera2"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e89a31db98e403b40af1a8f0ef9ae1ef",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Camera2",
+        "Name": "Camera2"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "e89a31db98e403b40af1a8f0ef9ae1ef",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Shader",
+        "PropertyNames": [],
+        "Name": "Hidden/Core/LensFlareDataDrivenPreview"
+      },
+      "Value": {
+        "FileID": 4800000,
+        "Guid": "19dfbb09098c9584a83c956fbd6c5d79",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_DirectSunlight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "392581b798d70d0408e104d352ffb20b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Shade@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "49e4a0929afd1ae4283e4657bc636f9e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_ClearSky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "490d69b278eff784b85feca736d57389",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerColor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "590d0a4a23369fe4094bee34430c4b38",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "TextureStack"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "79641ba14fe04324b8905bafbf3e82ed",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Texture"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "79062f3c36657da4e9a366000411cf78",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_MediumAreaLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "79474406bb16ef9439655eb4b419b6a8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Add@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "79aba0b290c471c4ba3d3f818d4e9b15",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Add@2x",
+        "Name": "Add@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "79aba0b290c471c4ba3d3f818d4e9b15",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "RenderDoc@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "89608b060fc7279479398a62e245a409",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "RenderDoc@2x",
+        "Name": "RenderDoc@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "89608b060fc7279479398a62e245a409",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_BlueSky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8991eaef2ed56cc45b9a80b50fbca5e2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "UnityDOTSInstancing"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "89aebf2868d41e34abc02aae1d41b4cd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerToggle"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "99811d558fd910d4b95f1fd7c0ba9ce9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_RightArrow"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "99e5d180080c96940a65c6d906ff9131",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_RightArrow",
+        "Name": "d_RightArrow"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "99e5d180080c96940a65c6d906ff9131",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Camera2@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "99d7e777338ab8f4ba890cc738794dba",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Camera2@2x",
+        "Name": "d_Camera2@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "99d7e777338ab8f4ba890cc738794dba",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Fluorescent"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b95665ddb99de4945b528a188a1c41c7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "BrightSky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "b93b6450b9bd1f44da176ac4a821c3e8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Layout2"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "d9658be087f390f46bfefa8cb32bbaa6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Layout2",
+        "Name": "Layout2"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "d9658be087f390f46bfefa8cb32bbaa6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Rotation@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "e9af78578671a3345b8cbf82f1f030b5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Rotation@2x",
+        "Name": "Rotation@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "e9af78578671a3345b8cbf82f1f030b5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "SampleUVMappingNormalInternal"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "f941b2119184e624a8ecd126735c5ed0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEngine",
+        "ClassName": "LensFlareEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "f9c70a18f33000140b98877df32d3c63",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "PerPixelDisplacement"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "0a40799d368cbbd4982d2f423cdd8595",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "SunriseSunset@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1ade1fa63a0a72f46be69e4ae5e83314",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "AreaLighting"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "2af09bb13e6547242913c40dfb0e50f9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Candlelight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2ae1ad1a228a66a479d96cae55499c4a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ffx_fsr1"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "2a92c8c54bb0f63458be93b670c77c3b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ffx_cas"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "2a9d148fab2695346824a766e925a31f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ProbeGIBaking.Dilate.cs"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "5a1695d093636284ca9487c8124775c5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_SunriseSunset"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "6ac733bfd834f4b4bab06306c63496f2",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "LayoutVertical"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "6a9d49ac254f03c48bf5b6590f4d2a24",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LayoutVertical",
+        "Name": "LayoutVertical"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "6a9d49ac254f03c48bf5b6590f4d2a24",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "IntenseAreaLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "6abd010e1fd246f4585f513da25bcede",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "UIFoldoutClosed",
+        "Name": "UIFoldoutClosed"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "7a0568d5e3330b84687e307992be3030",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 11,
+        "Height": 11,
+        "Name": "UIFoldoutClosed"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "7a0568d5e3330b84687e307992be3030",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 40,
+        "Height": 60,
+        "Name": "UpSnatchFocused"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8a35aa5922ce5b746a734edf7de25ab4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Environment"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8accc003516bedf4b94c9c8a86b2b6a1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Environment",
+        "Name": "Environment"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "8accc003516bedf4b94c9c8a86b2b6a1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Layout1"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9a3173335e5741d438e81064b518bd80",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Layout1",
+        "Name": "Layout1"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "9a3173335e5741d438e81064b518bd80",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "VolumeEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "9a033a261241d6e48af8ca011ab7c5c1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Link@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9a235474413e1f349b010b461c76efac",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Link@2x",
+        "Name": "Link@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "9a235474413e1f349b010b461c76efac",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_BrightSky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9a278b70c427e8e4caa47a45a5d59de8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "SunPosition"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "aa1dfcb67e8bf664d8d8a1821c118281",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "SunPosition",
+        "Name": "SunPosition"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "aa1dfcb67e8bf664d8d8a1821c118281",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Hammersley"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "aa5e319c8b8499f4fba1c3ecdd133545",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "ExteriorLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "baa2eadff75899140ac64277e3f60453",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 491,
+        "Hash": 228436760017589501661760328131727650233,
+        "Name": "LICENSE"
+      },
+      "Value": {
+        "FileID": 4900000,
+        "Guid": "ba4b5cdf8466e485ab792e0e4e45af25",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_SunPosition@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "ba2d3d7d05fd3e046b6d413365e9b11e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_SunPosition@2x",
+        "Name": "d_SunPosition@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "ba2d3d7d05fd3e046b6d413365e9b11e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "CommonDeprecated"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "ca3a5025616550a40816a5272a4f7631",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Add@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "daa49a1f06460a04b9827dd6f0bace08",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Add@2x",
+        "Name": "d_Add@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "daa49a1f06460a04b9827dd6f0bace08",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Layout1"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "da974c4d40533154a83d57ca90e34bb8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Layout1",
+        "Name": "d_Layout1"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "da974c4d40533154a83d57ca90e34bb8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_BlueSky@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0b39f97ea330aac459e3fbb440f4b0d0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor",
+        "ClassName": "LightAnchorEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "1b13ded1884be704b9f0610c73659f1e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "InteriorLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1bb3da4ea375c37498c93327420e6a01",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerContainer"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "2bd470ffc0c0fe54faddbf8d466bf519",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Link@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2b06c35710693f640babb3dcf747d06a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Link@2x",
+        "Name": "d_Link@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "2b06c35710693f640babb3dcf747d06a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "LayoutVertical@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "6b8067336fda8f040bb1f6d336ac08c5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LayoutVertical@2x",
+        "Name": "LayoutVertical@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "6b8067336fda8f040bb1f6d336ac08c5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "NamedObject",
+        "TypeID": 72,
+        "Name": "ProbeVolumeCellDilation"
+      },
+      "Value": {
+        "FileID": 7200000,
+        "Guid": "6bb382f7de370af41b775f54182e491d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ffx_lpm"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "8b2264ffe26ac3e42b4077bfbc35941b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerButton"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "8bff080b4e3bae64c80b54402ced6cc6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetHair"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9b18a8aa7da659344b2fce408beb09c3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Rotation"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "abc6ce87642c5c1478a4b107d1c5688a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Rotation",
+        "Name": "d_Rotation"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "abc6ce87642c5c1478a4b107d1c5688a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "LeftArrow"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "aba72f93e9005054dba8cb368c0bf724",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LeftArrow",
+        "Name": "LeftArrow"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "aba72f93e9005054dba8cb368c0bf724",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "NamedObject",
+        "TypeID": 72,
+        "Name": "ProbeVolumeSubdivide"
+      },
+      "Value": {
+        "FileID": 7200000,
+        "Guid": "bb86f1f0af829fd45b2ebddda1245c22",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "CloudySky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "bb2cc982d8ff1aa4a9ce5ee5fdb29023",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetKick_Left"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "bb3de0f2ada94114cbb7cc74829de16d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_renderdoc"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "cbe929948d88af7409a05054bc8187c7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_renderdoc",
+        "Name": "d_renderdoc"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "cbe929948d88af7409a05054bc8187c7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "ProjectorEditor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "cb4bfc396f2f4be69c46d1055d00781f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Add"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "cbaeed03e5416aa4bae23110b63a0c7d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Add",
+        "Name": "Add"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "cbaeed03e5416aa4bae23110b63a0c7d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering",
+        "ClassName": "EditorWindowWithHelpButton"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "db823efdb635ec84d8ecae05788f8143",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "ClearSky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "db0321d865208c648ae843f39ab69004",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Rotation@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "db7aaa162a1a5a54b826d15b5b20fb06",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Rotation@2x",
+        "Name": "d_Rotation@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "db7aaa162a1a5a54b826d15b5b20fb06",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Shade"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "fbe2a78a665b37a4c9ec6623f42feb59",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerEnumField"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "0ca07cb82ca30874c849ad6a8be4ce42",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_CloudySky"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0c24a3ead3381ee4cb4574c5be266d87",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_ExteriorLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0cd6ad04e58c5e1478f2925fa64f5b57",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetBounce_Left"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1c7013643e4df944492a5801199df62a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "LayoutCustom"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1cc4a70085896c04bbfbf60669963fc8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LayoutCustom",
+        "Name": "LayoutCustom"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "1cc4a70085896c04bbfbf60669963fc8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerFloatField"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "2c71addad67814c418e8376c7fabd008",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 256,
+        "Height": 256,
+        "Name": "Volume"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2cf14dd909ea7274aa8e6c973d8995f0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEditor.Rendering.LookDev",
+        "ClassName": "DisplayWindow"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "3c06d176f822d384683da5237d832c67",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetRim_Left"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "6cec6e582e857c24bb9432ed7ff629f8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Duplicate@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8ca869dd944d5f54e9ec614b26f10dcb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Duplicate@2x",
+        "Name": "d_Duplicate@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "8ca869dd944d5f54e9ec614b26f10dcb",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_LayoutCustom"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8c3a606a4a147a34c952b98bf038c662",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LayoutCustom",
+        "Name": "d_LayoutCustom"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "8c3a606a4a147a34c952b98bf038c662",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "LayoutHorizontal"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "8ccec084228b3b74a898f38126eb142f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LayoutHorizontal",
+        "Name": "LayoutHorizontal"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "8ccec084228b3b74a898f38126eb142f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "D3D11"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "9c7140d7b956a4547bb71f8ed0dd9049",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_RenderDoc@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9c63b51755ec8c845b857cc73a35d606",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_RenderDoc@2x",
+        "Name": "d_RenderDoc@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "9c63b51755ec8c845b857cc73a35d606",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_LayoutHorizontal@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9cad92999ddfa304495b735a55c78329",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LayoutHorizontal@2x",
+        "Name": "d_LayoutHorizontal@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "9cad92999ddfa304495b735a55c78329",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_ExteriorLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "acd8a3fb93bb04b4db467ca2090011ae",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "DecorativeLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "ac6bd7230f54da84b8ad3a0e2b14b3d9",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerValue"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "bc78ce7c3bda3b845b1e94eade19277f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Remove@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "cc27e95868ab32345b74b8338c01ebed",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Remove@2x",
+        "Name": "d_Remove@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "cc27e95868ab32345b74b8338c01ebed",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_SunPosition"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "cc99218b39d91f84e9a26fac406c07e7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_SunPosition",
+        "Name": "d_SunPosition"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "cc99218b39d91f84e9a26fac406c07e7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "LensFlareComponentSRP"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "cc4d76f733087744991913c9d19d5274",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ShaderVariablesProbeVolumes.cs"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "dcbd446e83bc87d40b82dd90f8814c3c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerEnumHistory"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "ecc0d22e5e3de604f9e4d3d8997e9122",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_CenterLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "fca3bc21b4600e04faaddb69c5fad81e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_CenterLight",
+        "Name": "d_CenterLight"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "fca3bc21b4600e04faaddb69c5fad81e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Duplicate"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "0d692588b1d40e9429620400bd5efe63",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Duplicate",
+        "Name": "d_Duplicate"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "0d692588b1d40e9429620400bd5efe63",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 613,
+        "Hash": 334249349888776412038829732187874371350,
+        "Name": "normalencoderbundle"
+      },
+      "Value": {
+        "FileID": 4900000,
+        "Guid": "1d2968a04f741f54499391f7043dd5d3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "MediumAreaLight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1dea3362fb2f72d46b7e3351a7e12ccf",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetRim_Right"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1deb07c84dc414b4388bf2970d0c9aef",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Shader",
+        "PropertyNames": [
+          "_Color"
+        ],
+        "Name": "Hidden/UnlitTransparentColored"
+      },
+      "Value": {
+        "FileID": 4800000,
+        "Guid": "2df96b66b5510f94b98df2ac6f926ef4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerIntField"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "3de67e2fb3c96a542b808862989985e0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Layout1@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "4de5e4f3717b2c548bd8b90b6c628b2f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Layout1@2x",
+        "Name": "d_Layout1@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "4de5e4f3717b2c548bd8b90b6c628b2f",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetBounce_Right"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "4dac1eeb02c481340801b3ac458b2976",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Overcast@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "5db8233d631a83f429153aaeb8f8333a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine",
+        "ClassName": "LightAnchor"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "7d07c5b68c1cfe64ca63f5d2bb80d2c5",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Packing"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "ad629edbad34c1c45afea3021c1553c8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 64,
+        "Height": 64,
+        "Name": "PresetKick_Right"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "bdb354565d2d91e48a7ffe02442fe226",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "LookDev@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "bd76726ffb1eb94429fb8143429bd978",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LookDev@2x",
+        "Name": "LookDev@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "bd76726ffb1eb94429fb8143429bd978",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "VeryBrightSun"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "bdc9b1177bc1ad84e8532eec9f2dcc13",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerVector3"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "cd072512faf9def4aab6bf02a353e37a",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "BlitColorAndDepth"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "cdea49463de0449b48cacd6a3925dcf7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Experimental.Rendering",
+        "ClassName": "ProbeVolume"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "cded085d155cde949b60f67a11dbc3bd",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "InteriorLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "ddbb35633e84dde4a93c6662f696ae4c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Candlelight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "eda062bf16e02ef44a7bf24336ddac6c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "Tessellation"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "1ea56bc9911bbad4191075872a46cc89",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "MediumAreaLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1eb691390c444f14bac0868bd61fd451",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "DecorativeLight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1e2ae1a12a2a1ff498cab6444b9cd394",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "Rotation"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2ee66e81975377745aaa59fe11ad374d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "Rotation",
+        "Name": "Rotation"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "2ee66e81975377745aaa59fe11ad374d",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 544,
+        "Hash": 211180711972721425307294930403374782589,
+        "Name": "Unity.RenderPipelines.Core.Editor"
+      },
+      "Value": {
+        "FileID": 5897886265953266890,
+        "Guid": "3eae0364be2026648bf74846acb8a731",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerFoldout"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "4e5dc9f9bba5df14fbe439bcc4c67063",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "BSDF"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "5eb5e8e99ae281342bae5c7b296b3ae3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 605,
+        "Hash": 26034633703675482754313615285656015791,
+        "Name": "Unity.RenderPipelines.Core.Editor.Tests"
+      },
+      "Value": {
+        "FileID": 5897886265953266890,
+        "Guid": "6e5480588ffa37d4f82fe96c45e8ce9c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "MoonlessNight@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "6e5a98aaa576d99408eeba30eb91eaba",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_Fluorescent@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "9ed59abbb45e72140ae72a33b30ea19e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Mesh",
+        "VertexCount": 205,
+        "SubMeshCount": 1,
+        "Name": "Icosphere"
+      },
+      "Value": {
+        "FileID": 289301614986012343,
+        "Guid": "9e1c97fc44f9a8744b61b58f72c56de4",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ImageBasedLighting"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "ae4dc0bfd9fc0b544a109513ba841d30",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "FSRCommon"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "ee30e890854422d4c85fb895d34e2a53",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerVBox"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "ee7ce141c3937674f8ac247bbcf63711",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "GeometricTools"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "eebfba22df48acf4b978d98000cb10e6",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "UnityEngine.Experimental.Rendering",
+        "ClassName": "ProbeVolumeBakingWindow"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "0f8abfbe013119f439e0bfec01e3687b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "Shade@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "1f20ae185bcb2254a844ed304955beb3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "SunPosition@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2f75c34a5bc525545916fb8367422dd0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "SunPosition@2x",
+        "Name": "SunPosition@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "2f75c34a5bc525545916fb8367422dd0",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "LayoutCustom@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "2fffe801f98fb314484382ea4affcf94",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "LayoutCustom@2x",
+        "Name": "LayoutCustom@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "2fffe801f98fb314484382ea4affcf94",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Candlelight"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "3f9a63faecec9a34c9ffbfedd9ac5c3b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "d_Remove"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "4ff71d806d58fd041be6e55d1d1ca70e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_Remove",
+        "Name": "d_Remove"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "4ff71d806d58fd041be6e55d1d1ca70e",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering.UI",
+        "ClassName": "DebugUIHandlerPanel"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "5f61540bb3be4c2409cf6d2f51435714",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "VirtualTexturing"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "6f22d4e29906d3c47892e0c92874b752",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Runtime",
+        "Namespace": "UnityEngine.Rendering",
+        "ClassName": "DebugUpdater"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "6fa749f6d8ed4b441af9aa005fe0f895",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 0,
+        "Hash": 167830467844043968176572005485231480276,
+        "Name": "ShadowSamplingTent"
+      },
+      "Value": {
+        "FileID": 10900000,
+        "Guid": "6ff912bb23fcd5b468dd2e5c37addac3",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 613,
+        "Hash": 86745882374029896332970189661564810953,
+        "Name": "normalencoderbundle_android"
+      },
+      "Value": {
+        "FileID": 4900000,
+        "Guid": "9f11766ed901b67438a0b1116a0dd05b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 535,
+        "Hash": 38520835838191396845839347402059321340,
+        "Name": "Unity.RenderPipelines.Core.Runtime.Tests"
+      },
+      "Value": {
+        "FileID": 5897886265953266890,
+        "Guid": "bf043f86dbf1bda4398ec83eebe40b8c",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "MonoScript",
+        "AssemblyName": "Unity.RenderPipelines.Core.Editor",
+        "Namespace": "NormalImportUtil",
+        "ClassName": "ReimportNormalMaps"
+      },
+      "Value": {
+        "FileID": 11500000,
+        "Guid": "cf91b7ab2449c304cb89c325ad2f4cb1",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "renderdoc"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "cf13fb90f91d2a545a00591d75b43bd8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "renderdoc",
+        "Name": "renderdoc"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "cf13fb90f91d2a545a00591d75b43bd8",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "TextAsset",
+        "Length": 1312,
+        "Hash": 298051792020549195072272825405814700770,
+        "Name": "Unity.RenderPipelines.Core.Runtime"
+      },
+      "Value": {
+        "FileID": 5897886265953266890,
+        "Guid": "df380645f10b7bc4b97d4f5eb6303d95",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 128,
+        "Height": 128,
+        "Name": "LightAnchor_Icon"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "df491817340312f439c32f95902ddee7",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 16,
+        "Height": 16,
+        "Name": "RightArrow"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "df4dc708bd8692446a6d5c3531ac377b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "RightArrow",
+        "Name": "RightArrow"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "df4dc708bd8692446a6d5c3531ac377b",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Texture2D",
+        "Width": 32,
+        "Height": 32,
+        "Name": "d_LookDev@2x"
+      },
+      "Value": {
+        "FileID": 2800000,
+        "Guid": "ffdf80dc342e69344b2dccafe04c30ee",
+        "Type": 3
+      }
+    },
+    {
+      "Key": {
+        "$type": "Sprite",
+        "Texture": "d_LookDev@2x",
+        "Name": "d_LookDev@2x"
+      },
+      "Value": {
+        "FileID": 21300000,
+        "Guid": "ffdf80dc342e69344b2dccafe04c30ee",
+        "Type": 3
+      }
+    }
+  ]
+}
